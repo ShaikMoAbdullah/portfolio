@@ -23,7 +23,7 @@ const links = [
     ),
   },
   {
-    href: "https://linkedin.com/in/shaikmohammadabdullah",
+    href: "https://linkedin.com/in/shaikmoabdullah",
     label: "LinkedIn",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">

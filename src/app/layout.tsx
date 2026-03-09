@@ -84,7 +84,7 @@ export default function RootLayout({
       addressCountry: "IN",
     },
     sameAs: [
-      "https://linkedin.com/in/shaikmohammadabdullah",
+      "https://linkedin.com/in/shaikmoabdullah",
       "https://github.com/shaikmoabdullah",
       "https://x.com/shaikmoabdullah",
     ],

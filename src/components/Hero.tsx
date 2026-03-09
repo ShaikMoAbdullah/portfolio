@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const socialLinks = [
-  { href: "https://linkedin.com/in/shaikmohammadabdullah", label: "LinkedIn", icon: "linkedin" },
+  { href: "https://linkedin.com/in/shaikmoabdullah", label: "LinkedIn", icon: "linkedin" },
   { href: "https://github.com/shaikmoabdullah", label: "GitHub", icon: "github" },
   { href: "https://x.com/shaikmoabdullah", label: "X", icon: "x" },
 ];
