@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const experiences = [
   {
     company: "Karya",
-    role: "Product Engineer",
+    role: "Senior Software Engineer",
     period: "Sep 2024 – Present",
     location: "Bengaluru, Karnataka, India",
     highlights: [

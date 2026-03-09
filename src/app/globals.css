@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* Use class-based dark mode so the toggle works */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #fafaf9;
   --foreground: #1c1917;
@@ -38,4 +41,21 @@ html {
 :focus-visible {
   outline: 2px solid var(--tw-ring-color, #f59e0b);
   outline-offset: 2px;
+}
+
+/* Print styles - print:hidden is a Tailwind utility, applied via className */
+@media print {
+  body {
+    background: white;
+    color: #1c1917;
+  }
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75rem;
+    color: #78716c;
+  }
+  a[href^="mailto:"]::after,
+  a[href^="tel:"]::after {
+    content: "";
+  }
 }
