@@ -26,3 +26,12 @@ npm start
 ## Deploy
 
 Deploy to Vercel, Netlify, or any static/hybrid host. Remember to add `resume.pdf` to the `public` folder before deploying.
+
+## Google Search (SEO)
+
+To improve how shaikmoabdullah.com appears in Google search results:
+
+1. **Add your site to Google Search Console**: https://search.google.com/search-console
+2. **Verify ownership** (DNS record or HTML file)
+3. **Submit your sitemap**: `https://shaikmoabdullah.com/sitemap.xml`
+4. **Request indexing** for your homepage to speed up discovery
