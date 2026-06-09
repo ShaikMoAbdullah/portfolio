@@ -7,9 +7,19 @@ const projects = [
     name: "Karya Server & NLQ",
     org: "Karya",
     description:
-      "Backend infrastructure and Natural Language Query system. Built a conversational chat interface for querying databases in plain English, with chat history, saved/reusable queries, and auto-resizable data tables.",
+      "Backend infrastructure and Natural Language Query system. Built a conversational interface for querying live PostgreSQL databases in plain English, with persistent chat history, reusable query templates, and auto-resizable data tables.",
     stack: ["Node.js", "GraphQL", "PostgreSQL", "LLM Integration", "TypeScript"],
-    impact: "Enables non-technical users to explore data through natural language.",
+    impact: "Removed SQL dependency for non-technical stakeholders.",
+    liveUrl: null,
+    githubUrl: null,
+  },
+  {
+    name: "HealthCheck",
+    org: "ZopSmart",
+    description:
+      "Cross-service health monitoring dashboard surfacing real-time status, dependency health, and usage metrics across all backend services. Visualised inter-service relationships as a D3.js force-directed graph.",
+    stack: ["ReactJS", "D3.js", "Node.js"],
+    impact: "Reduced mean time to detect (MTTD) service degradations.",
     liveUrl: null,
     githubUrl: null,
   },
@@ -17,7 +27,7 @@ const projects = [
     name: "Confluence",
     org: "ZopSmart",
     description:
-      "Content creator monetization and social hiring platform. Architected and built from the ground up with scalable GraphQL schemas and data models.",
+      "Content-creator monetisation and social hiring platform. Architected and built from the ground up with scalable GraphQL schemas and relational data models for creator-to-employer workflows.",
     stack: ["Next.js", "Tailwind CSS", "GraphQL", "Hasura", "PostgreSQL"],
     impact: "Full-stack platform for creators and hiring.",
     liveUrl: null,

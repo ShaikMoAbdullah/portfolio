@@ -5,17 +5,17 @@ import { motion } from "framer-motion";
 const experiences = [
   {
     company: "Karya",
-    role: "Senior Software Engineer",
+    role: "Senior Product Engineer",
     period: "Sep 2024 – Present",
     location: "Bengaluru, Karnataka, India",
     highlights: [
-      "Integrated Permit.io for RBAC/ReBAC across 100+ API routes; configured role-based access for 5 user personas with instant access revocation",
-      "Pitched and onboarded enterprise clients, led end-to-end technical discovery, scoped integration solutions, and oversaw seamless client-platform connections",
-      "Built a conversational NLQ chat interface for querying databases in plain English—chat history, saved/reusable queries, auto-resizable data table",
-      "Designed and built 25+ modular task components for data collection workflows (voice, touch, selection), improving accessibility in low-resource environments",
-      "Implemented upload and date-range filters, resolved critical report re-rendering bugs for efficient payout management",
-      "Added broadcast support for task distribution; integrated WhatsApp Business API for notifications",
-      "Fixed OTP handling for test numbers and international phone formats, supporting multi-country expansion",
+      "Designed and delivered a zero-trust authorization system using Permit.io RBAC/ReBAC across 100+ API routes, enforcing fine-grained access for 5 user personas; built a self-serve role management UI that cut access provisioning from hours to seconds and eliminated all manual database privilege changes",
+      "Spearheaded enterprise client onboarding for Karya's PaaS platform; led end-to-end technical discovery, scoped integration architectures, and managed production deployments — bridging sales and engineering to accelerate client time-to-value",
+      "Designed and shipped a Natural Language Query (NLQ) conversational interface letting non-technical stakeholders query live PostgreSQL databases in plain English — persistent chat history, reusable query templates, and a responsive auto-resizable data table",
+      "Built 25+ modular, accessible task components for structured data-collection pipelines (voice, touch, selection), improving field accessibility for workers in low-bandwidth, low-literacy environments",
+      "Engineered upload and date-range filtering in the payments module and resolved critical report re-rendering defects, enabling faster, more accurate worker payout management",
+      "Integrated WhatsApp Business API for broadcast task distribution and automated assignment notifications, extending task delivery to large worker pools via a high-engagement channel",
+      "Resolved OTP authentication for test accounts and international phone formats (e.g., Ethiopian country codes), ensuring reliable verification and enabling multi-country expansion",
     ],
   },
   {
@@ -24,8 +24,9 @@ const experiences = [
     period: "Jan 2022 – Aug 2024",
     location: "Bengaluru, Karnataka, India",
     highlights: [
-      "Kroger (US e-Commerce): Significant contributor to homepage for 2nd largest e-commerce SaaS in the USA. Improved UX/navigation—3x click-through rates, 12% increase in product sales. Stack: TypeScript, ReactJS, CSS, Jest, React Testing Library",
-      "EazyUpdates (Task Management SaaS): Built leave management and payroll tracking module; integrated GitHub and Google Calendar APIs for real-time employee progress. Responsible for 50% of total product build. Stack: TypeScript, ReactJS, CSS, Jest, React Testing Library",
+      "Kroger (US Grocery e-Commerce): Core contributor to homepage and navigation architecture for the 2nd-largest US grocery e-commerce SaaS; redesigned category discovery flows, driving a 3× click-through lift and 12% increase in product sales. Stack: TypeScript, ReactJS, CSS, Jest, React Testing Library",
+      "EazyUpdates (Task Management SaaS): Engineered a leave management and payroll tracking module for HR teams, substantially reducing manual overhead; integrated GitHub and Google Calendar APIs for real-time employee progress. Owned 50% of the total product build. Stack: TypeScript, ReactJS, CSS, Jest",
+      "HealthCheck (Internal DevOps Tool): Architected a cross-service health monitoring dashboard surfacing real-time status, dependency health, and usage metrics; visualised inter-service relationships as a D3.js force-directed graph, reducing mean time to detect degradations. Stack: ReactJS, D3.js, Node.js",
     ],
   },
   {
@@ -34,8 +35,8 @@ const experiences = [
     period: "Aug 2021 – Jan 2022",
     location: "Bengaluru, Karnataka, India",
     highlights: [
-      "Completed intensive full-stack bootcamp; built production-grade e-property listing marketplace with responsive, accessible UI and comprehensive test coverage",
-      "Stack: ReactJS, Tailwind CSS, Bootstrap, CSS, Jest, React Testing Library",
+      "Completed an intensive full-stack engineering programme covering component architecture, frontend best practices, test-driven development (TDD), and production deployment pipelines",
+      "Shipped a production-grade e-property listing marketplace enabling landlords to list properties and tenants to browse and enquire — fully responsive, accessible UI with comprehensive unit and integration test coverage. Stack: ReactJS, Tailwind CSS, Bootstrap, Jest, React Testing Library",
     ],
   },
   {

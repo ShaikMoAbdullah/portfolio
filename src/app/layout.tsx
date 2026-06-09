@@ -14,9 +14,9 @@ const baseUrl = "https://shaikmoabdullah.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: "Shaik Mohammad Abdullah | Senior Software Engineer | shaikmoabdullah.com",
+  title: "Shaik Mohammad Abdullah | Senior Product Engineer | shaikmoabdullah.com",
   description:
-    "Shaik Mohammad Abdullah (shaikmoabdullah) — Senior Software Engineer in Bangalore. 4+ years building web platforms, SaaS products, and enterprise integrations. React, TypeScript, Node.js, GraphQL. Portfolio at shaikmoabdullah.com.",
+    "Shaik Mohammad Abdullah (shaikmoabdullah) — Senior Product Engineer in Bangalore. 4+ years building web platforms, SaaS products, and enterprise integrations. React, TypeScript, Node.js, GraphQL. Portfolio at shaikmoabdullah.com.",
   applicationName: "Shaik Mohammad Abdullah",
   authors: [{ name: "Shaik Mohammad Abdullah", url: baseUrl }],
   creator: "Shaik Mohammad Abdullah",
@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     "shaik mohammad abdullah",
     "shaikmoabdullah",
     "shaikmoabdullah.com",
+    "Senior Product Engineer",
     "Senior Software Engineer",
     "Full Stack Engineer",
     "React",
@@ -35,9 +36,9 @@ export const metadata: Metadata = {
     "Bengaluru",
   ],
   openGraph: {
-    title: "Shaik Mohammad Abdullah | Senior Software Engineer | shaikmoabdullah.com",
+    title: "Shaik Mohammad Abdullah | Senior Product Engineer | shaikmoabdullah.com",
     description:
-      "Shaik Mohammad Abdullah (shaikmoabdullah) — Senior Software Engineer in Bangalore. 4+ years building web platforms, SaaS products, and enterprise integrations. Portfolio at shaikmoabdullah.com.",
+      "Shaik Mohammad Abdullah (shaikmoabdullah) — Senior Product Engineer in Bangalore. 4+ years building web platforms, SaaS products, and enterprise integrations. Portfolio at shaikmoabdullah.com.",
     url: baseUrl,
     siteName: "Shaik Mohammad Abdullah",
     images: [
@@ -53,9 +54,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shaik Mohammad Abdullah | Senior Software Engineer | shaikmoabdullah.com",
+    title: "Shaik Mohammad Abdullah | Senior Product Engineer | shaikmoabdullah.com",
     description:
-      "Shaik Mohammad Abdullah (shaikmoabdullah) — Senior Software Engineer in Bangalore. 4+ years building web platforms, SaaS products, and enterprise integrations.",
+      "Shaik Mohammad Abdullah (shaikmoabdullah) — Senior Product Engineer in Bangalore. 4+ years building web platforms, SaaS products, and enterprise integrations.",
   },
   alternates: {
     canonical: baseUrl,
@@ -78,9 +79,9 @@ export default function RootLayout({
     name: "Shaik Mohammad Abdullah",
     alternateName: ["shaikmoabdullah", "shaikmoabdullah.com"],
     url: baseUrl,
-    jobTitle: "Senior Software Engineer",
+    jobTitle: "Senior Product Engineer",
     description:
-      "Full Stack Senior Software Engineer with 4+ years building scalable web platforms, SaaS products, and enterprise integrations. Based in Bangalore, India.",
+      "Full Stack Senior Product Engineer with 4+ years building scalable web platforms, SaaS products, and enterprise integrations. Based in Bangalore, India.",
     knowsAbout: [
       "React",
       "TypeScript",
@@ -108,9 +109,9 @@ export default function RootLayout({
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Shaik Mohammad Abdullah | Senior Software Engineer | shaikmoabdullah.com",
+    name: "Shaik Mohammad Abdullah | Senior Product Engineer | shaikmoabdullah.com",
     description:
-      "Portfolio of Shaik Mohammad Abdullah (shaikmoabdullah) — Senior Software Engineer in Bangalore. Experience, projects, skills, and contact.",
+      "Portfolio of Shaik Mohammad Abdullah (shaikmoabdullah) — Senior Product Engineer in Bangalore. Experience, projects, skills, and contact.",
     url: baseUrl,
     mainEntity: { "@id": `${baseUrl}#person` },
     author: { "@type": "Person", name: "Shaik Mohammad Abdullah", url: baseUrl },

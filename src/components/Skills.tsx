@@ -25,7 +25,7 @@ const skillGroups = [
   },
   {
     title: "AI & NLP",
-    items: ["Natural Language Query (NLQ)", "Chat Interfaces", "LLM Integration"],
+    items: ["Natural Language Query (NLQ)", "Conversational Interfaces", "LLM Integration"],
   },
   {
     title: "Testing",
@@ -37,7 +37,7 @@ const skillGroups = [
   },
   {
     title: "Tools & Platforms",
-    items: ["Git", "Linux", "Azure AI", "Google Analytics"],
+    items: ["Git", "Linux", "D3.js", "Azure AI", "Google Analytics"],
   },
 ];
 

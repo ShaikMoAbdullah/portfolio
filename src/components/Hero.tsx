@@ -98,7 +98,7 @@ export function Hero() {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="mt-2 text-lg font-medium text-amber-600 dark:text-amber-400"
             >
-              Senior Software Engineer · Full Stack
+              Senior Product Engineer · Full Stack
             </motion.p>
             <motion.p
               initial={{ y: 20, opacity: 0 }}
