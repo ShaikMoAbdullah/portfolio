@@ -4,6 +4,18 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
+    company: "Umrain",
+    role: "Founder",
+    period: "2025 – 2026",
+    location: "Bengaluru, Karnataka, India",
+    highlights: [
+      "Founded a travel-tech startup enabling people to plan and book their Umrah independently and transparently — without relying on traditional agents — born from a poor personal agent-led Umrah experience in late 2024",
+      "Built a self-serve platform that generates fully customised, end-to-end Umrah itineraries (home-to-home) tailored to each traveller's preferences, budget, and schedule",
+      "Drove ~$400K in first-year revenue as a bootstrapped venture, owning product, technology, operations, vendor partnerships, and customer support end to end",
+      "Gained deep, end-to-end knowledge of the Umrah travel industry — supplier and ground logistics, pricing, compliance, and building customer trust in a high-stakes journey",
+    ],
+  },
+  {
     company: "Karya",
     role: "Senior Product Engineer",
     period: "Sep 2024 – Present",
