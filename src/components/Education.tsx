@@ -21,7 +21,7 @@ export function Education() {
   return (
     <section
       id="education"
-      className="px-6 py-20"
+      className="px-6 py-20 bg-stone-100/50 dark:bg-stone-900/30"
       aria-labelledby="education-heading"
     >
       <div className="mx-auto max-w-4xl">

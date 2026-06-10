@@ -1,6 +1,10 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+
+const chipClass =
+  "rounded-full bg-stone-200 dark:bg-stone-800 px-3 py-1 text-xs font-medium text-stone-700 dark:text-stone-300";
 
 const projects = [
   {
@@ -9,7 +13,7 @@ const projects = [
     description:
       "Travel-tech platform helping people plan their Umrah independently and transparently — without agents. Generates fully customised, end-to-end itineraries (home-to-home) based on each traveller's preferences, budget, and schedule.",
     stack: ["Travel-Tech", "Product", "Operations", "Bootstrapped"],
-    impact: "~$400K first-year revenue; end-to-end Umrah industry expertise.",
+    impact: "~$40K first-year revenue; end-to-end Umrah industry expertise.",
     liveUrl: "https://umrain.in",
   },
   {
@@ -39,16 +43,6 @@ const projects = [
     githubUrl: null,
   },
   {
-    name: "Confluence",
-    org: "ZopSmart",
-    description:
-      "Content-creator monetisation and social hiring platform. Architected and built from the ground up with scalable GraphQL schemas and relational data models for creator-to-employer workflows.",
-    stack: ["Next.js", "Tailwind CSS", "GraphQL", "Hasura", "PostgreSQL"],
-    impact: "Full-stack platform for creators and hiring.",
-    liveUrl: null,
-    githubUrl: null,
-  },
-  {
     name: "EazyUpdates",
     org: "ZopSmart",
     description:
@@ -72,6 +66,16 @@ const projects = [
     stack: ["TypeScript", "ReactJS", "CSS", "Jest", "React Testing Library"],
     impact: "3× click-through rate; 12% lift in product sales.",
     liveUrl: "https://www.kroger.com",
+    githubUrl: null,
+  },
+  {
+    name: "Confluence",
+    org: "ZopSmart",
+    description:
+      "Content-creator monetisation and social hiring platform. Architected and built from the ground up with scalable GraphQL schemas and relational data models for creator-to-employer workflows.",
+    stack: ["Next.js", "Tailwind CSS", "GraphQL", "Hasura", "PostgreSQL"],
+    impact: "Full-stack platform for creators and hiring.",
+    liveUrl: null,
     githubUrl: null,
   },
   {
@@ -113,6 +117,123 @@ function ExternalLink() {
       <polyline points="15 3 21 3 21 9" />
       <line x1="10" y1="14" x2="21" y2="3" />
     </svg>
+  );
+}
+
+function TrendingUpIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="mt-0.5 h-4 w-4 shrink-0"
+    >
+      <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+      <polyline points="16 7 22 7 22 13" />
+    </svg>
+  );
+}
+
+function StackTags({ items }: { items: string[] }) {
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const measureRef = useRef<HTMLDivElement>(null);
+  const plusRef = useRef<HTMLSpanElement>(null);
+  const [visibleCount, setVisibleCount] = useState(items.length);
+
+  useEffect(() => {
+    const wrap = wrapRef.current;
+    const measure = measureRef.current;
+    const plus = plusRef.current;
+    if (!wrap || !measure || !plus) return;
+
+    const GAP = 8; // matches gap-2 (0.5rem)
+
+    const compute = () => {
+      const available = wrap.clientWidth;
+      const widths = Array.from(
+        measure.querySelectorAll<HTMLElement>("[data-tag]"),
+      ).map((el) => el.offsetWidth);
+      const plusWidth = plus.offsetWidth;
+
+      let used = 0;
+      let count = 0;
+      for (let i = 0; i < widths.length; i++) {
+        const w = widths[i] + (i > 0 ? GAP : 0);
+        const isLast = i === widths.length - 1;
+        const reserve = isLast ? 0 : GAP + plusWidth;
+        if (used + w + reserve <= available) {
+          used += w;
+          count = i + 1;
+        } else {
+          break;
+        }
+      }
+      setVisibleCount(Math.max(1, count));
+    };
+
+    compute();
+    const ro = new ResizeObserver(compute);
+    ro.observe(wrap);
+    return () => ro.disconnect();
+  }, [items]);
+
+  const hiddenItems = items.slice(visibleCount);
+
+  return (
+    <div ref={wrapRef} className="relative mt-4">
+      <div className="flex gap-2 overflow-hidden">
+        {items.slice(0, visibleCount).map((tech) => (
+          <span key={tech} className={`${chipClass} shrink-0 whitespace-nowrap`}>
+            {tech}
+          </span>
+        ))}
+        {hiddenItems.length > 0 && (
+          <span className="group/more relative shrink-0">
+            <button
+              type="button"
+              className={`${chipClass} cursor-default whitespace-nowrap`}
+              aria-label={`${hiddenItems.length} more: ${hiddenItems.join(", ")}`}
+            >
+              +{hiddenItems.length}
+            </button>
+            <span
+              role="tooltip"
+              style={{ width: "max-content", maxWidth: "16rem" }}
+              className="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 hidden -translate-x-1/2 flex-wrap justify-center gap-1.5 rounded-lg border border-stone-200 bg-white p-2 shadow-lg group-hover/more:flex group-focus-within/more:flex dark:border-stone-700 dark:bg-stone-900"
+            >
+              {hiddenItems.map((tech) => (
+                <span
+                  key={tech}
+                  className={`${chipClass} shrink-0 whitespace-nowrap`}
+                >
+                  {tech}
+                </span>
+              ))}
+            </span>
+          </span>
+        )}
+      </div>
+
+      <div
+        ref={measureRef}
+        aria-hidden
+        style={{ visibility: "hidden" }}
+        className="pointer-events-none absolute left-0 top-0 flex gap-2 opacity-0"
+      >
+        {items.map((tech) => (
+          <span key={tech} data-tag className={`${chipClass} whitespace-nowrap`}>
+            {tech}
+          </span>
+        ))}
+        <span ref={plusRef} className={`${chipClass} whitespace-nowrap`}>
+          +{items.length}
+        </span>
+      </div>
+    </div>
   );
 }
 
@@ -168,19 +289,13 @@ export function Projects() {
               <p className="mt-2 text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
                 {project.description}
               </p>
-              <p className="mt-3 text-xs font-medium text-stone-500 dark:text-stone-500">
-                {project.impact}
-              </p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {project.stack.map((tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-full bg-stone-200 dark:bg-stone-800 px-3 py-1 text-xs font-medium text-stone-700 dark:text-stone-300"
-                  >
-                    {tech}
-                  </span>
-                ))}
+              <div className="mt-3 flex items-start gap-2 rounded-lg bg-amber-500/10 px-3 py-2 text-amber-700 dark:bg-amber-400/10 dark:text-amber-300">
+                <TrendingUpIcon />
+                <p className="text-xs font-semibold leading-snug">
+                  {project.impact}
+                </p>
               </div>
+              <StackTags items={project.stack} />
             </motion.article>
           ))}
         </motion.div>

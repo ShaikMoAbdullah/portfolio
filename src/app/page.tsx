@@ -4,7 +4,6 @@ import { Impact } from "@/components/Impact";
 import { Experience } from "@/components/Experience";
 import { Projects } from "@/components/Projects";
 import { Skills } from "@/components/Skills";
-import { Certifications } from "@/components/Certifications";
 import { Education } from "@/components/Education";
 import { Contact } from "@/components/Contact";
 import { SkipToContent } from "@/components/SkipToContent";
@@ -25,8 +24,6 @@ export default function Home() {
         <Projects />
         <div className="border-b border-stone-200/60 dark:border-stone-800/60" aria-hidden />
         <Skills />
-        <div className="border-b border-stone-200/60 dark:border-stone-800/60" aria-hidden />
-        <Certifications />
         <div className="border-b border-stone-200/60 dark:border-stone-800/60" aria-hidden />
         <Education />
         <div className="border-b border-stone-200/60 dark:border-stone-800/60" aria-hidden />

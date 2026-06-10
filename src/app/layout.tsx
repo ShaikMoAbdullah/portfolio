@@ -14,9 +14,9 @@ const baseUrl = "https://shaikmoabdullah.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: "Shaik Mohammad Abdullah | Senior Product Engineer | shaikmoabdullah.com",
+  title: "Shaik Mohammad Abdullah | Product Engineer | shaikmoabdullah.com",
   description:
-    "Shaik Mohammad Abdullah (shaikmoabdullah) — Senior Product Engineer in Bangalore. 4+ years building web platforms, SaaS products, and enterprise integrations. React, TypeScript, Node.js, GraphQL. Portfolio at shaikmoabdullah.com.",
+    "Shaik Mohammad Abdullah (shaikmoabdullah) — product-first engineer in Bangalore. 5+ years shipping SaaS products and platforms end-to-end (and founding Umrain), turning user problems into measurable business impact. React, TypeScript, Node.js, GraphQL. Portfolio at shaikmoabdullah.com.",
   applicationName: "Shaik Mohammad Abdullah",
   authors: [{ name: "Shaik Mohammad Abdullah", url: baseUrl }],
   creator: "Shaik Mohammad Abdullah",
@@ -25,6 +25,8 @@ export const metadata: Metadata = {
     "shaik mohammad abdullah",
     "shaikmoabdullah",
     "shaikmoabdullah.com",
+    "Product Engineer",
+    "Product-first Engineer",
     "Senior Product Engineer",
     "Senior Software Engineer",
     "Full Stack Engineer",
@@ -36,9 +38,9 @@ export const metadata: Metadata = {
     "Bengaluru",
   ],
   openGraph: {
-    title: "Shaik Mohammad Abdullah | Senior Product Engineer | shaikmoabdullah.com",
+    title: "Shaik Mohammad Abdullah | Product Engineer | shaikmoabdullah.com",
     description:
-      "Shaik Mohammad Abdullah (shaikmoabdullah) — Senior Product Engineer in Bangalore. 4+ years building web platforms, SaaS products, and enterprise integrations. Portfolio at shaikmoabdullah.com.",
+      "Shaik Mohammad Abdullah (shaikmoabdullah) — product-first engineer in Bangalore. 5+ years shipping SaaS products and platforms end-to-end, turning user problems into measurable business impact. Portfolio at shaikmoabdullah.com.",
     url: baseUrl,
     siteName: "Shaik Mohammad Abdullah",
     images: [
@@ -54,9 +56,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shaik Mohammad Abdullah | Senior Product Engineer | shaikmoabdullah.com",
+    title: "Shaik Mohammad Abdullah | Product Engineer | shaikmoabdullah.com",
     description:
-      "Shaik Mohammad Abdullah (shaikmoabdullah) — Senior Product Engineer in Bangalore. 4+ years building web platforms, SaaS products, and enterprise integrations.",
+      "Shaik Mohammad Abdullah (shaikmoabdullah) — product-first engineer in Bangalore. 5+ years shipping SaaS products and platforms end-to-end, turning user problems into measurable business impact.",
   },
   alternates: {
     canonical: baseUrl,
@@ -79,17 +81,20 @@ export default function RootLayout({
     name: "Shaik Mohammad Abdullah",
     alternateName: ["shaikmoabdullah", "shaikmoabdullah.com"],
     url: baseUrl,
-    jobTitle: "Senior Product Engineer",
+    jobTitle: "Product Engineer",
     description:
-      "Full Stack Senior Product Engineer with 4+ years building scalable web platforms, SaaS products, and enterprise integrations. Based in Bangalore, India.",
+      "Product-first engineer with 5+ years shipping SaaS products and platforms end-to-end — from user discovery and UX to architecture, launch, and growth. Founder of Umrain. Based in Bangalore, India.",
     knowsAbout: [
+      "Product Engineering",
+      "Product Strategy",
+      "Product Discovery",
+      "SaaS",
       "React",
       "TypeScript",
       "Node.js",
       "GraphQL",
       "PostgreSQL",
       "Full Stack Development",
-      "SaaS",
     ],
     address: {
       "@type": "PostalAddress",
@@ -109,9 +114,9 @@ export default function RootLayout({
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Shaik Mohammad Abdullah | Senior Product Engineer | shaikmoabdullah.com",
+    name: "Shaik Mohammad Abdullah | Product Engineer | shaikmoabdullah.com",
     description:
-      "Portfolio of Shaik Mohammad Abdullah (shaikmoabdullah) — Senior Product Engineer in Bangalore. Experience, projects, skills, and contact.",
+      "Portfolio of Shaik Mohammad Abdullah (shaikmoabdullah) — product-first engineer in Bangalore. Experience, projects, skills, and contact.",
     url: baseUrl,
     mainEntity: { "@id": `${baseUrl}#person` },
     author: { "@type": "Person", name: "Shaik Mohammad Abdullah", url: baseUrl },

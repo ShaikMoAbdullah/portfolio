@@ -3,10 +3,10 @@
 import { motion } from "framer-motion";
 
 const metrics = [
-  { value: "3x", label: "Click-through rates" },
-  { value: "12%", label: "Sales growth" },
-  { value: "20%", label: "Traffic increase" },
-  { value: "24 min", label: "Avg. daily engagement" },
+  { value: "$40K", label: "First-year revenue", context: "Umrain (founder)" },
+  { value: "100+", label: "API routes secured", context: "Karya zero-trust authz" },
+  { value: "3×", label: "Click-through rate", context: "Kroger homepage" },
+  { value: "12%", label: "Product sales lift", context: "Kroger e-commerce" },
 ];
 
 export function Impact() {
@@ -41,11 +41,14 @@ export function Impact() {
               transition={{ delay: i * 0.05 }}
               className="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900/50 px-6 py-5 text-center shadow-sm"
             >
-              <p className="text-2xl font-bold text-amber-600 dark:text-amber-400 sm:text-3xl">
+              <p className="text-3xl font-bold text-amber-600 dark:text-amber-400 sm:text-4xl">
                 {metric.value}
               </p>
-              <p className="mt-1 text-sm text-stone-600 dark:text-stone-400">
+              <p className="mt-1 text-sm font-medium text-stone-700 dark:text-stone-300">
                 {metric.label}
+              </p>
+              <p className="mt-0.5 text-xs text-stone-500 dark:text-stone-500">
+                {metric.context}
               </p>
             </motion.div>
           ))}

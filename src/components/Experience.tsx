@@ -2,16 +2,26 @@
 
 import { motion } from "framer-motion";
 
-const experiences = [
+type Role = {
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  impact?: string;
+  highlights: string[];
+};
+
+const experiences: Role[] = [
   {
     company: "Umrain",
     role: "Founder",
     period: "2025 – 2026",
     location: "Bengaluru, Karnataka, India",
+    impact: "~$40K first-year revenue · solo-built & bootstrapped",
     highlights: [
       "Founded a travel-tech startup enabling people to plan and book their Umrah independently and transparently — without relying on traditional agents — born from a poor personal agent-led Umrah experience in late 2024",
       "Built a self-serve platform that generates fully customised, end-to-end Umrah itineraries (home-to-home) tailored to each traveller's preferences, budget, and schedule",
-      "Drove ~$400K in first-year revenue as a bootstrapped venture, owning product, technology, operations, vendor partnerships, and customer support end to end",
+      "Drove ~$40K in first-year revenue as a bootstrapped venture, owning product, technology, operations, vendor partnerships, and customer support end to end",
       "Gained deep, end-to-end knowledge of the Umrah travel industry — supplier and ground logistics, pricing, compliance, and building customer trust in a high-stakes journey",
     ],
   },
@@ -20,6 +30,7 @@ const experiences = [
     role: "Senior Product Engineer",
     period: "Sep 2024 – Present",
     location: "Bengaluru, Karnataka, India",
+    impact: "100+ API routes secured · access provisioning cut from hours to seconds",
     highlights: [
       "Designed and delivered a zero-trust authorization system using Permit.io RBAC/ReBAC across 100+ API routes, enforcing fine-grained access for 5 user personas; built a self-serve role management UI that cut access provisioning from hours to seconds and eliminated all manual database privilege changes",
       "Spearheaded enterprise client onboarding for Karya's PaaS platform; led end-to-end technical discovery, scoped integration architectures, and managed production deployments — bridging sales and engineering to accelerate client time-to-value",
@@ -35,6 +46,7 @@ const experiences = [
     role: "Software Engineer",
     period: "Jan 2022 – Aug 2024",
     location: "Bengaluru, Karnataka, India",
+    impact: "3× click-through rate & 12% sales lift on Kroger's US e-commerce",
     highlights: [
       "Kroger (US Grocery e-Commerce): Core contributor to homepage and navigation architecture for the 2nd-largest US grocery e-commerce SaaS; redesigned category discovery flows, driving a 3× click-through lift and 12% increase in product sales. Stack: TypeScript, ReactJS, CSS, Jest, React Testing Library",
       "EazyUpdates (Task Management SaaS): Engineered a leave management and payroll tracking module for HR teams, substantially reducing manual overhead; integrated GitHub and Google Calendar APIs for real-time employee progress. Owned 50% of the total product build. Stack: TypeScript, ReactJS, CSS, Jest",
@@ -74,6 +86,42 @@ const item = {
   hidden: { y: 20, opacity: 0 },
   show: { y: 0, opacity: 1 },
 };
+
+const METRIC_SPLIT = /(\$\d[\d,]*K?|\d+\+|\d+%|\d+×|\d+x\b|hours to seconds)/g;
+const METRIC_TEST = /^(\$\d[\d,]*K?|\d+\+|\d+%|\d+×|\d+x|hours to seconds)$/;
+
+function emphasizeMetrics(text: string) {
+  return text.split(METRIC_SPLIT).map((part, i) =>
+    METRIC_TEST.test(part) ? (
+      <strong
+        key={i}
+        className="font-semibold text-stone-900 dark:text-stone-100"
+      >
+        {part}
+      </strong>
+    ) : (
+      <span key={i}>{part}</span>
+    ),
+  );
+}
+
+function TrendingUpIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-4 w-4 shrink-0"
+    >
+      <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+      <polyline points="16 7 22 7 22 13" />
+    </svg>
+  );
+}
 
 export function Experience() {
   return (
@@ -120,6 +168,12 @@ export function Experience() {
                 <p className="mt-1 text-sm text-stone-500 dark:text-stone-400">
                   {exp.location}
                 </p>
+                {exp.impact && (
+                  <div className="mt-3 inline-flex items-center gap-2 rounded-lg bg-amber-500/10 px-3 py-1.5 text-sm font-semibold text-amber-700 dark:bg-amber-400/10 dark:text-amber-300">
+                    <TrendingUpIcon />
+                    {exp.impact}
+                  </div>
+                )}
                 <ul className="mt-4 space-y-2">
                   {exp.highlights.map((h, j) => (
                     <li
@@ -127,7 +181,7 @@ export function Experience() {
                       className="flex gap-2 text-stone-600 dark:text-stone-300 text-sm leading-relaxed"
                     >
                       <span className="mt-1.5 shrink-0 h-1.5 w-1.5 rounded-full bg-amber-500/60 dark:bg-amber-400/60" />
-                      {h}
+                      <span>{emphasizeMetrics(h)}</span>
                     </li>
                   ))}
                 </ul>
