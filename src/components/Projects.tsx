@@ -203,7 +203,7 @@ function StackTags({ items }: { items: string[] }) {
             <span
               role="tooltip"
               style={{ width: "max-content", maxWidth: "16rem" }}
-              className="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 hidden -translate-x-1/2 flex-wrap justify-center gap-1.5 rounded-lg border border-stone-200 bg-white p-2 shadow-lg group-hover/more:flex group-focus-within/more:flex dark:border-stone-700 dark:bg-stone-900"
+              className="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 hidden -translate-x-1/2 flex-wrap justify-center gap-1.5 rounded-lg border border-edge bg-surface p-2 shadow-lg group-hover/more:flex group-focus-within/more:flex"
             >
               {hiddenItems.map((tech) => (
                 <span
@@ -241,7 +241,7 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="px-6 py-20 bg-stone-100/50 dark:bg-stone-900/30"
+      className="px-6 py-20 bg-surface-2"
       aria-labelledby="projects-heading"
     >
       <div className="mx-auto max-w-4xl">
@@ -265,10 +265,10 @@ export function Projects() {
             <motion.article
               key={project.name}
               variants={item}
-              className="group rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900/50 p-6 shadow-sm transition-all hover:shadow-lg hover:border-amber-500/30 dark:hover:border-amber-500/30"
+              className="group rounded-xl border border-edge bg-surface p-6 shadow-sm transition-all hover:shadow-lg hover:border-accent/40"
             >
               <div className="flex items-start justify-between gap-3">
-                <p className="text-xs font-medium uppercase tracking-wider text-amber-600 dark:text-amber-400">
+                <p className="text-xs font-medium uppercase tracking-wider text-accent">
                   {project.org}
                 </p>
                 {project.liveUrl && (
@@ -276,7 +276,7 @@ export function Projects() {
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-amber-600 dark:text-amber-400 hover:underline"
+                    className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-accent hover:underline"
                   >
                     <ExternalLink />
                     Live
@@ -289,7 +289,7 @@ export function Projects() {
               <p className="mt-2 text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
                 {project.description}
               </p>
-              <div className="mt-3 flex items-start gap-2 rounded-lg bg-amber-500/10 px-3 py-2 text-amber-700 dark:bg-amber-400/10 dark:text-amber-300">
+              <div className="mt-3 flex items-start gap-2 rounded-lg bg-accent/10 px-3 py-2 text-accent">
                 <TrendingUpIcon />
                 <p className="text-xs font-semibold leading-snug">
                   {project.impact}

@@ -78,7 +78,15 @@ export function Hero() {
       className="relative overflow-hidden px-6 py-20 md:py-28"
       aria-labelledby="hero-heading"
     >
-      <div className="mx-auto max-w-4xl">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 -top-24 h-80"
+        style={{
+          background:
+            "radial-gradient(55% 55% at 50% 0%, color-mix(in oklab, var(--accent-strong) 16%, transparent), transparent 70%)",
+        }}
+      />
+      <div className="relative mx-auto max-w-4xl">
         <div className="flex flex-col items-center gap-12 md:flex-row md:items-start md:gap-16">
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
@@ -86,7 +94,7 @@ export function Hero() {
             transition={{ duration: 0.5 }}
             className="relative shrink-0"
           >
-            <div className="relative h-40 w-40 overflow-hidden rounded-2xl ring-4 ring-amber-500/20 shadow-xl md:h-52 md:w-52">
+            <div className="relative h-40 w-40 overflow-hidden rounded-2xl ring-4 ring-accent-strong/20 shadow-xl md:h-52 md:w-52">
               <Image
                 src="/profile.png"
                 alt="Shaik Mohammad Abdullah"
@@ -100,7 +108,7 @@ export function Hero() {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
-              className="absolute -bottom-2 -right-2 h-8 w-8 rounded-full bg-amber-500 dark:bg-amber-400"
+              className="absolute -bottom-2 -right-2 h-8 w-8 rounded-full bg-accent-strong"
               aria-hidden
             />
           </motion.div>
@@ -119,7 +127,7 @@ export function Hero() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="mt-2 text-lg font-medium text-amber-600 dark:text-amber-400"
+              className="mt-2 text-lg font-medium text-accent"
             >
               Product/Engineer
             </motion.p>
@@ -144,7 +152,7 @@ export function Hero() {
                 href="/resume.pdf"
                 download
                 onClick={handleResumeClick}
-                className="inline-flex items-center gap-2 rounded-full bg-amber-500 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:bg-amber-600 hover:shadow-amber-500/25 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 dark:focus:ring-offset-stone-950 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="inline-flex items-center gap-2 rounded-full bg-accent-strong px-6 py-3 text-sm font-semibold text-accent-contrast shadow-lg transition-all hover:bg-accent-strong-hover hover:shadow-accent-strong/25 focus:outline-none focus:ring-2 focus:ring-accent-strong focus:ring-offset-2 dark:focus:ring-offset-stone-950 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {resumeLoading ? (
                   <>
@@ -202,7 +210,7 @@ export function Hero() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-stone-200/80 dark:bg-stone-800/80 text-stone-600 dark:text-stone-400 transition-colors hover:bg-amber-500/20 hover:text-amber-600 dark:hover:text-amber-400"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-stone-200/80 dark:bg-stone-800/80 text-stone-600 dark:text-stone-400 transition-colors hover:bg-accent/15 hover:text-accent"
                   aria-label={link.label}
                 >
                   <SocialIcon icon={link.icon} />

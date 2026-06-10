@@ -92,9 +92,9 @@ export function Contact() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="flex items-center gap-3 rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900/50 px-5 py-4 text-stone-700 dark:text-stone-300 shadow-sm transition-all hover:border-amber-500/50 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 dark:focus:ring-offset-stone-950"
+              className="flex items-center gap-3 rounded-xl border border-edge bg-surface px-5 py-4 text-stone-700 dark:text-stone-300 shadow-sm transition-all hover:border-accent/50 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-accent-strong focus:ring-offset-2 dark:focus:ring-offset-stone-950"
             >
-              <span className="text-amber-600 dark:text-amber-400">{link.icon}</span>
+              <span className="text-accent">{link.icon}</span>
               <span className="font-medium">{link.label}</span>
             </motion.a>
           ))}

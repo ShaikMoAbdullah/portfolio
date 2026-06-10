@@ -11,25 +11,25 @@ import { BackToTop } from "@/components/BackToTop";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-stone-50 dark:bg-stone-950 text-stone-900 dark:text-stone-100">
+    <div className="min-h-screen bg-page text-foreground">
       <SkipToContent />
       <Header />
       <main id="main-content">
         <Hero />
-        <div className="border-b border-stone-200/60 dark:border-stone-800/60" aria-hidden />
+        <div className="border-b border-edge/60" aria-hidden />
         <Impact />
-        <div className="border-b border-stone-200/60 dark:border-stone-800/60" aria-hidden />
+        <div className="border-b border-edge/60" aria-hidden />
         <Experience />
-        <div className="border-b border-stone-200/60 dark:border-stone-800/60" aria-hidden />
+        <div className="border-b border-edge/60" aria-hidden />
         <Projects />
-        <div className="border-b border-stone-200/60 dark:border-stone-800/60" aria-hidden />
+        <div className="border-b border-edge/60" aria-hidden />
         <Skills />
-        <div className="border-b border-stone-200/60 dark:border-stone-800/60" aria-hidden />
+        <div className="border-b border-edge/60" aria-hidden />
         <Education />
-        <div className="border-b border-stone-200/60 dark:border-stone-800/60" aria-hidden />
+        <div className="border-b border-edge/60" aria-hidden />
         <Contact />
       </main>
-      <footer className="border-t border-stone-200 dark:border-stone-800 px-6 py-8 text-center text-sm text-stone-500 dark:text-stone-400">
+      <footer className="border-t border-edge px-6 py-8 text-center text-sm text-stone-500 dark:text-stone-400">
         © {new Date().getFullYear()} Shaik Mohammad Abdullah
       </footer>
       <BackToTop />

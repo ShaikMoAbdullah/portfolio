@@ -151,9 +151,9 @@ export function Experience() {
             <motion.li
               key={exp.company}
               variants={item}
-              className="relative pl-8 before:absolute before:left-0 before:top-2 before:h-3 before:w-3 before:rounded-full before:bg-amber-500 dark:before:bg-amber-400"
+              className="relative pl-8 before:absolute before:left-0 before:top-2 before:h-3 before:w-3 before:rounded-full before:bg-accent"
             >
-              <div className="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900/50 p-6 shadow-sm transition-shadow hover:shadow-md">
+              <div className="rounded-xl border border-edge bg-surface p-6 shadow-sm transition-shadow hover:shadow-md">
                 <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
                   <h3 className="text-xl font-semibold text-stone-900 dark:text-stone-50">
                     {exp.company}
@@ -162,14 +162,14 @@ export function Experience() {
                     {exp.period}
                   </span>
                 </div>
-                <p className="mt-1 font-medium text-amber-600 dark:text-amber-400">
+                <p className="mt-1 font-medium text-accent">
                   {exp.role}
                 </p>
                 <p className="mt-1 text-sm text-stone-500 dark:text-stone-400">
                   {exp.location}
                 </p>
                 {exp.impact && (
-                  <div className="mt-3 inline-flex items-center gap-2 rounded-lg bg-amber-500/10 px-3 py-1.5 text-sm font-semibold text-amber-700 dark:bg-amber-400/10 dark:text-amber-300">
+                  <div className="mt-3 inline-flex items-center gap-2 rounded-lg bg-accent/10 px-3 py-1.5 text-sm font-semibold text-accent">
                     <TrendingUpIcon />
                     {exp.impact}
                   </div>
@@ -180,7 +180,7 @@ export function Experience() {
                       key={j}
                       className="flex gap-2 text-stone-600 dark:text-stone-300 text-sm leading-relaxed"
                     >
-                      <span className="mt-1.5 shrink-0 h-1.5 w-1.5 rounded-full bg-amber-500/60 dark:bg-amber-400/60" />
+                      <span className="mt-1.5 shrink-0 h-1.5 w-1.5 rounded-full bg-accent/60" />
                       <span>{emphasizeMetrics(h)}</span>
                     </li>
                   ))}

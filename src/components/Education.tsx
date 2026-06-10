@@ -21,7 +21,7 @@ export function Education() {
   return (
     <section
       id="education"
-      className="px-6 py-20 bg-stone-100/50 dark:bg-stone-900/30"
+      className="px-6 py-20 bg-surface-2"
       aria-labelledby="education-heading"
     >
       <div className="mx-auto max-w-4xl">
@@ -43,12 +43,12 @@ export function Education() {
           {education.map((edu) => (
             <li
               key={edu.school}
-              className="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900/50 p-5 shadow-sm"
+              className="rounded-xl border border-edge bg-surface p-5 shadow-sm"
             >
               <h3 className="font-semibold text-stone-900 dark:text-stone-50">
                 {edu.school}
               </h3>
-              <p className="mt-1 text-amber-600 dark:text-amber-400">{edu.degree}</p>
+              <p className="mt-1 text-accent">{edu.degree}</p>
               <p className="mt-1 text-sm text-stone-500 dark:text-stone-400">
                 {edu.period} · {edu.location}
               </p>

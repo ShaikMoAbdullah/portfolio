@@ -24,7 +24,7 @@ export function Header() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-0 z-50 w-full border-b border-stone-200/60 dark:border-stone-800/60 bg-stone-50/80 dark:bg-stone-950/80 backdrop-blur-md print:hidden"
+      className="sticky top-0 z-50 w-full border-b border-edge/60 bg-page/80 backdrop-blur-md print:hidden"
     >
       <nav
         className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4"
@@ -32,7 +32,7 @@ export function Header() {
       >
         <a
           href="#about"
-          className="text-lg font-semibold text-stone-800 dark:text-stone-100 transition-colors hover:text-amber-600 dark:hover:text-amber-400"
+          className="text-lg font-semibold text-stone-800 dark:text-stone-100 transition-colors hover:text-accent"
         >
           SMA
         </a>
@@ -47,8 +47,8 @@ export function Header() {
                     href={link.href}
                     className={`text-sm font-medium transition-colors ${
                       isActive
-                        ? "text-amber-600 dark:text-amber-400"
-                        : "text-stone-600 dark:text-stone-400 hover:text-amber-600 dark:hover:text-amber-400"
+                        ? "text-accent"
+                        : "text-stone-600 dark:text-stone-400 hover:text-accent"
                     }`}
                   >
                     {link.label}
@@ -85,7 +85,7 @@ export function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden overflow-hidden border-t border-stone-200 dark:border-stone-800"
+            className="md:hidden overflow-hidden border-t border-edge"
           >
             <ul className="flex flex-col gap-1 px-6 py-4">
               {navLinks.map((link) => {
@@ -98,8 +98,8 @@ export function Header() {
                       onClick={() => setMobileOpen(false)}
                       className={`block py-2 text-sm font-medium transition-colors ${
                         isActive
-                          ? "text-amber-600 dark:text-amber-400"
-                          : "text-stone-600 dark:text-stone-400 hover:text-amber-600 dark:hover:text-amber-400"
+                          ? "text-accent"
+                          : "text-stone-600 dark:text-stone-400 hover:text-accent"
                       }`}
                     >
                       {link.label}

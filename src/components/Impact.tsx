@@ -13,7 +13,7 @@ export function Impact() {
   return (
     <section
       id="impact"
-      className="px-6 py-16 border-y border-stone-200 dark:border-stone-800 bg-stone-100/50 dark:bg-stone-900/30"
+      className="px-6 py-16 border-y border-edge bg-surface-2"
       aria-labelledby="impact-heading"
     >
       <div className="mx-auto max-w-4xl">
@@ -39,9 +39,9 @@ export function Impact() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.05 }}
-              className="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900/50 px-6 py-5 text-center shadow-sm"
+              className="rounded-xl border border-edge bg-surface px-6 py-5 text-center shadow-sm"
             >
-              <p className="text-3xl font-bold text-amber-600 dark:text-amber-400 sm:text-4xl">
+              <p className="text-3xl font-bold text-metric sm:text-4xl">
                 {metric.value}
               </p>
               <p className="mt-1 text-sm font-medium text-stone-700 dark:text-stone-300">

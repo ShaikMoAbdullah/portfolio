@@ -82,9 +82,9 @@ export function Skills() {
             <motion.div
               key={group.title}
               variants={item}
-              className="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900/50 p-5 shadow-sm"
+              className="rounded-xl border border-edge bg-surface p-5 shadow-sm"
             >
-              <h3 className="font-semibold text-amber-600 dark:text-amber-400">
+              <h3 className="font-semibold text-accent">
                 {group.title}
               </h3>
               <ul className="mt-3 flex flex-wrap gap-2">
