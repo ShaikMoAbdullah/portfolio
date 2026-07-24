@@ -69,6 +69,16 @@ const projects = [
     githubUrl: null,
   },
   {
+    name: "Smrize",
+    org: "ZopSmart",
+    description:
+      "Mobile-first book-summarisation platform with native audio playback. Optimised mobile rendering performance to grow engagement and daily active usage.",
+    stack: ["JavaScript", "Next.js", "Tailwind CSS"],
+    impact: "20% traffic increase; 24-min average daily sessions.",
+    liveUrl: null,
+    githubUrl: null,
+  },
+  {
     name: "Confluence",
     org: "ZopSmart",
     description:

@@ -13,19 +13,6 @@ type Role = {
 
 const experiences: Role[] = [
   {
-    company: "Umrain",
-    role: "Founder",
-    period: "2025 – 2026",
-    location: "Bengaluru, Karnataka, India",
-    impact: "~$40K first-year revenue · solo-built & bootstrapped",
-    highlights: [
-      "Founded a travel-tech startup enabling people to plan and book their Umrah independently and transparently — without relying on traditional agents — born from a poor personal agent-led Umrah experience in late 2024",
-      "Built a self-serve platform that generates fully customised, end-to-end Umrah itineraries (home-to-home) tailored to each traveller's preferences, budget, and schedule",
-      "Drove ~$40K in first-year revenue as a bootstrapped venture, owning product, technology, operations, vendor partnerships, and customer support end to end",
-      "Gained deep, end-to-end knowledge of the Umrah travel industry — supplier and ground logistics, pricing, compliance, and building customer trust in a high-stakes journey",
-    ],
-  },
-  {
     company: "Karya",
     role: "Senior Product Engineer",
     period: "Sep 2024 – Present",
@@ -33,12 +20,26 @@ const experiences: Role[] = [
     impact: "100+ API routes secured · access provisioning cut from hours to seconds",
     highlights: [
       "Designed and delivered a zero-trust authorization system using Permit.io RBAC/ReBAC across 100+ API routes, enforcing fine-grained access for 5 user personas; built a self-serve role management UI that cut access provisioning from hours to seconds and eliminated all manual database privilege changes",
+      "Own the authorization architecture end-to-end as the platform's access lead and go-to person for onboarding new users; regularly conduct code reviews across the platform team, upholding code quality and mentoring engineers on access-control best practices",
       "Spearheaded enterprise client onboarding for Karya's PaaS platform; led end-to-end technical discovery, scoped integration architectures, and managed production deployments — bridging sales and engineering to accelerate client time-to-value",
       "Designed and shipped a Natural Language Query (NLQ) conversational interface letting non-technical stakeholders query live PostgreSQL databases in plain English — persistent chat history, reusable query templates, and a responsive auto-resizable data table",
       "Built 25+ modular, accessible task components for structured data-collection pipelines (voice, touch, selection), improving field accessibility for workers in low-bandwidth, low-literacy environments",
       "Engineered upload and date-range filtering in the payments module and resolved critical report re-rendering defects, enabling faster, more accurate worker payout management",
       "Integrated WhatsApp Business API for broadcast task distribution and automated assignment notifications, extending task delivery to large worker pools via a high-engagement channel",
       "Resolved OTP authentication for test accounts and international phone formats (e.g., Ethiopian country codes), ensuring reliable verification and enabling multi-country expansion",
+    ],
+  },
+  {
+    company: "Umrain",
+    role: "Founder",
+    period: "2024 – 2025",
+    location: "Bengaluru, Karnataka, India",
+    impact: "~$40K first-year revenue · solo-built & bootstrapped",
+    highlights: [
+      "Founded a travel-tech startup enabling people to plan and book their Umrah independently and transparently — without relying on traditional agents — born from a poor personal agent-led Umrah experience in late 2024",
+      "Built a self-serve platform that generates fully customised, end-to-end Umrah itineraries (home-to-home) tailored to each traveller's preferences, budget, and schedule",
+      "Drove ~$40K in first-year revenue as a bootstrapped venture, owning product, technology, operations, vendor partnerships, and customer support end to end",
+      "Gained deep, end-to-end knowledge of the Umrah travel industry — supplier and ground logistics, pricing, compliance, and building customer trust in a high-stakes journey",
     ],
   },
   {
@@ -50,6 +51,8 @@ const experiences: Role[] = [
     highlights: [
       "Kroger (US Grocery e-Commerce): Core contributor to homepage and navigation architecture for the 2nd-largest US grocery e-commerce SaaS; redesigned category discovery flows, driving a 3× click-through lift and 12% increase in product sales. Stack: TypeScript, ReactJS, CSS, Jest, React Testing Library",
       "EazyUpdates (Task Management SaaS): Engineered a leave management and payroll tracking module for HR teams, substantially reducing manual overhead; integrated GitHub and Google Calendar APIs for real-time employee progress. Owned 50% of the total product build. Stack: TypeScript, ReactJS, CSS, Jest",
+      "Smrize (Productivity SaaS): Built a mobile-first book-summarization platform with native audio playback; optimised mobile rendering performance to achieve a 20% traffic increase and 24-minute average daily sessions per user. Stack: JavaScript, Next.js, Tailwind CSS",
+      "Confluence (Social Hiring Platform): Architected and built a creator-monetisation and social-hiring platform from the ground up; designed scalable GraphQL schemas and relational data models for creator-to-employer workflows. Stack: Next.js, Tailwind CSS, GraphQL, Hasura, PostgreSQL",
       "HealthCheck (Internal DevOps Tool): Architected a cross-service health monitoring dashboard surfacing real-time status, dependency health, and usage metrics; visualised inter-service relationships as a D3.js force-directed graph, reducing mean time to detect degradations. Stack: ReactJS, D3.js, Node.js",
     ],
   },
