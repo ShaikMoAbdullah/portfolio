@@ -61,7 +61,7 @@ export function Hero() {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="mt-2 text-lg font-medium text-stone-700 dark:text-stone-300"
             >
-              Product Engineer, Founder
+              Product Engineer · Founder of Umrain
             </motion.p>
             <motion.p
               initial={{ y: 20, opacity: 0 }}
