@@ -1,102 +1,63 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { SectionHeading } from "./SectionHeading";
 
 const chipClass =
-  "rounded-full bg-stone-200 dark:bg-stone-800 px-3 py-1 text-xs font-medium text-stone-700 dark:text-stone-300";
+  "rounded-full bg-stone-200 px-3 py-1 text-xs font-medium text-stone-700 dark:bg-stone-800 dark:text-stone-300";
 
-const projects = [
+type CaseStudy = {
+  name: string;
+  org: string;
+  featured?: boolean;
+  problem: string;
+  did: string[];
+  result: string;
+  stack: string[];
+  liveUrl?: string;
+};
+
+const caseStudies: CaseStudy[] = [
   {
     name: "Umrain",
-    org: "Founder · Startup",
-    description:
-      "Travel-tech platform helping people plan their Umrah independently and transparently — without agents. Generates fully customised, end-to-end itineraries (home-to-home) based on each traveller's preferences, budget, and schedule.",
-    stack: ["Travel-Tech", "Product", "Operations", "Bootstrapped"],
-    impact: "~$40K first-year revenue; end-to-end Umrah industry expertise.",
+    org: "Founder",
+    featured: true,
+    problem:
+      "Planning Umrah usually means going through agents, with opaque pricing and little say in the itinerary.",
+    did: [
+      "Built a self-serve platform that generates home-to-home itineraries from each traveller's budget, preferences, and schedule.",
+      "Ran product, engineering, vendor partnerships, pricing, and customer support as a solo founder.",
+    ],
+    result: "~$40K revenue in the first year, bootstrapped.",
+    stack: ["Product", "Travel-tech", "Operations"],
     liveUrl: "https://umrain.in",
   },
   {
-    name: "Karya Server & NLQ",
+    name: "Access control & plain-English queries",
     org: "Karya",
-    description:
-      "Backend infrastructure and Natural Language Query system. Built a conversational interface for querying live PostgreSQL databases in plain English, with persistent chat history, reusable query templates, and auto-resizable data tables.",
-    stack: [
-      "Node.js",
-      "GraphQL",
-      "PostgreSQL",
-      "LLM Integration",
-      "TypeScript",
+    problem:
+      "Changing access meant editing the database by hand, and non-technical teams could not look at live data without SQL.",
+    did: [
+      "Designed RBAC and ReBAC across 100+ API routes for four personas, plus a self-serve UI to assign and revoke roles.",
+      "Shipped a conversational interface over live PostgreSQL, with chat history, reusable templates, and resizable tables.",
     ],
-    impact: "Removed SQL dependency for non-technical stakeholders.",
+    result:
+      "Provisioning dropped from hours to seconds. Stakeholders query data in plain English.",
+    stack: ["Node.js", "GraphQL", "PostgreSQL", "TypeScript", "LLM"],
     liveUrl: "https://karya.in",
-    githubUrl: null,
   },
   {
-    name: "HealthCheck",
-    org: "ZopSmart",
-    description:
-      "Cross-service health monitoring dashboard surfacing real-time status, dependency health, and usage metrics across all backend services. Visualised inter-service relationships as a D3.js force-directed graph.",
-    stack: ["ReactJS", "D3.js", "Node.js"],
-    impact: "Reduced mean time to detect (MTTD) service degradations.",
-    liveUrl: null,
-    githubUrl: null,
-  },
-  {
-    name: "EazyUpdates",
-    org: "ZopSmart",
-    description:
-      "Task management SaaS for HR teams. Built leave management and payroll tracking module; integrated GitHub and Google Calendar APIs for real-time employee progress tracking.",
-    stack: [
-      "TypeScript",
-      "ReactJS",
-      "GitHub API",
-      "Google Calendar API",
-      "Jest",
+    name: "Homepage & category discovery",
+    org: "Kroger · ZopSmart",
+    problem:
+      "Shoppers had trouble finding products through the homepage and category navigation of a major US grocery site.",
+    did: [
+      "Contributed to the homepage and navigation architecture of the 2nd-largest US grocery e-commerce platform.",
+      "Redesigned category-discovery flows so products were easier to find.",
     ],
-    impact: "50% of total product build; reduced manual HR effort.",
-    liveUrl: "https://eazyupdates.com",
-    githubUrl: null,
-  },
-  {
-    name: "Kroger",
-    org: "ZopSmart",
-    description:
-      "Homepage and navigation architecture for the 2nd-largest US grocery e-commerce SaaS. Core contributor; redesigned category discovery flows to improve product findability and conversion.",
-    stack: ["TypeScript", "ReactJS", "CSS", "Jest", "React Testing Library"],
-    impact: "3× click-through rate; 12% lift in product sales.",
+    result: "3× click-through rate and a 12% lift in product sales.",
+    stack: ["TypeScript", "React", "Jest"],
     liveUrl: "https://www.kroger.com",
-    githubUrl: null,
-  },
-  {
-    name: "Smrize",
-    org: "ZopSmart",
-    description:
-      "Mobile-first book-summarisation platform with native audio playback. Optimised mobile rendering performance to grow engagement and daily active usage.",
-    stack: ["JavaScript", "Next.js", "Tailwind CSS"],
-    impact: "20% traffic increase; 24-min average daily sessions.",
-    liveUrl: null,
-    githubUrl: null,
-  },
-  {
-    name: "Confluence",
-    org: "ZopSmart",
-    description:
-      "Content-creator monetisation and social hiring platform. Architected and built from the ground up with scalable GraphQL schemas and relational data models for creator-to-employer workflows.",
-    stack: ["Next.js", "Tailwind CSS", "GraphQL", "Hasura", "PostgreSQL"],
-    impact: "Full-stack platform for creators and hiring.",
-    liveUrl: null,
-    githubUrl: null,
-  },
-  {
-    name: "Road Accident Alert & Analysis System",
-    org: "REVA University",
-    description:
-      "Published research: real-time road accident detection and analytics system to improve emergency response. Sensor-based alerting and accident trend analysis for public safety.",
-    stack: ["Research", "IoT", "Analytics"],
-    impact: "Published 2021.",
-    liveUrl: null,
-    githubUrl: null,
   },
 ];
 
@@ -122,6 +83,7 @@ function ExternalLink() {
       stroke="currentColor"
       strokeWidth="2"
       className="h-4 w-4 shrink-0"
+      aria-hidden
     >
       <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
       <polyline points="15 3 21 3 21 9" />
@@ -130,120 +92,81 @@ function ExternalLink() {
   );
 }
 
-function TrendingUpIcon() {
+function CaseStudyCard({ study }: { study: CaseStudy }) {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="mt-0.5 h-4 w-4 shrink-0"
+    <article
+      className="h-full rounded-2xl border border-edge bg-surface p-6 shadow-sm md:p-8"
     >
-      <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-      <polyline points="16 7 22 7 22 13" />
-    </svg>
-  );
-}
-
-function StackTags({ items }: { items: string[] }) {
-  const wrapRef = useRef<HTMLDivElement>(null);
-  const measureRef = useRef<HTMLDivElement>(null);
-  const plusRef = useRef<HTMLSpanElement>(null);
-  const [visibleCount, setVisibleCount] = useState(items.length);
-
-  useEffect(() => {
-    const wrap = wrapRef.current;
-    const measure = measureRef.current;
-    const plus = plusRef.current;
-    if (!wrap || !measure || !plus) return;
-
-    const GAP = 8; // matches gap-2 (0.5rem)
-
-    const compute = () => {
-      const available = wrap.clientWidth;
-      const widths = Array.from(
-        measure.querySelectorAll<HTMLElement>("[data-tag]"),
-      ).map((el) => el.offsetWidth);
-      const plusWidth = plus.offsetWidth;
-
-      let used = 0;
-      let count = 0;
-      for (let i = 0; i < widths.length; i++) {
-        const w = widths[i] + (i > 0 ? GAP : 0);
-        const isLast = i === widths.length - 1;
-        const reserve = isLast ? 0 : GAP + plusWidth;
-        if (used + w + reserve <= available) {
-          used += w;
-          count = i + 1;
-        } else {
-          break;
-        }
-      }
-      setVisibleCount(Math.max(1, count));
-    };
-
-    compute();
-    const ro = new ResizeObserver(compute);
-    ro.observe(wrap);
-    return () => ro.disconnect();
-  }, [items]);
-
-  const hiddenItems = items.slice(visibleCount);
-
-  return (
-    <div ref={wrapRef} className="relative mt-4">
-      <div className="flex gap-2 overflow-hidden">
-        {items.slice(0, visibleCount).map((tech) => (
-          <span key={tech} className={`${chipClass} shrink-0 whitespace-nowrap`}>
-            {tech}
-          </span>
-        ))}
-        {hiddenItems.length > 0 && (
-          <span className="group/more relative shrink-0">
-            <button
-              type="button"
-              className={`${chipClass} cursor-default whitespace-nowrap`}
-              aria-label={`${hiddenItems.length} more: ${hiddenItems.join(", ")}`}
-            >
-              +{hiddenItems.length}
-            </button>
-            <span
-              role="tooltip"
-              style={{ width: "max-content", maxWidth: "16rem" }}
-              className="pointer-events-none absolute bottom-full left-1/2 z-20 mb-2 hidden -translate-x-1/2 flex-wrap justify-center gap-1.5 rounded-lg border border-edge bg-surface p-2 shadow-lg group-hover/more:flex group-focus-within/more:flex"
-            >
-              {hiddenItems.map((tech) => (
-                <span
-                  key={tech}
-                  className={`${chipClass} shrink-0 whitespace-nowrap`}
-                >
-                  {tech}
-                </span>
-              ))}
-            </span>
-          </span>
+      <div className="flex items-start justify-between gap-3">
+        <p className="text-xs font-medium uppercase tracking-wider text-stone-500 dark:text-stone-400">
+          {study.org}
+          {study.featured && (
+            <span className="text-stone-400 dark:text-stone-500"> · Featured</span>
+          )}
+        </p>
+        {study.liveUrl && (
+          <a
+            href={study.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-accent hover:underline"
+          >
+            <ExternalLink />
+            Live
+          </a>
         )}
       </div>
-
-      <div
-        ref={measureRef}
-        aria-hidden
-        style={{ visibility: "hidden" }}
-        className="pointer-events-none absolute left-0 top-0 flex gap-2 opacity-0"
+      <h3
+        className={`mt-2 font-semibold text-stone-900 dark:text-stone-50 ${
+          study.featured ? "text-2xl" : "text-lg"
+        }`}
       >
-        {items.map((tech) => (
-          <span key={tech} data-tag className={`${chipClass} whitespace-nowrap`}>
+        {study.name}
+      </h3>
+      <dl className="mt-6 space-y-5">
+        <div>
+          <dt className="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">
+            Problem
+          </dt>
+          <dd className="mt-1.5 text-sm leading-relaxed text-stone-600 dark:text-stone-300">
+            {study.problem}
+          </dd>
+        </div>
+        <div>
+          <dt className="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">
+            What I did
+          </dt>
+          <dd className="mt-1.5">
+            <ul className="space-y-2">
+              {study.did.map((point) => (
+                <li
+                  key={point}
+                  className="flex gap-2 text-sm leading-relaxed text-stone-600 dark:text-stone-300"
+                >
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-stone-400 dark:bg-stone-500" />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          </dd>
+        </div>
+        <div>
+          <dt className="text-xs font-semibold uppercase tracking-wider text-stone-500 dark:text-stone-400">
+            Result
+          </dt>
+          <dd className="mt-1.5 text-sm font-semibold leading-relaxed text-metric">
+            {study.result}
+          </dd>
+        </div>
+      </dl>
+      <ul className="mt-6 flex flex-wrap gap-2">
+        {study.stack.map((tech) => (
+          <li key={tech} className={chipClass}>
             {tech}
-          </span>
+          </li>
         ))}
-        <span ref={plusRef} className={`${chipClass} whitespace-nowrap`}>
-          +{items.length}
-        </span>
-      </div>
-    </div>
+      </ul>
+    </article>
   );
 }
 
@@ -251,62 +174,31 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="px-6 py-20 bg-surface-2"
+      className="scroll-mt-20 bg-surface-2 px-6 pt-20 pb-6"
       aria-labelledby="projects-heading"
     >
       <div className="mx-auto max-w-4xl">
-        <motion.h2
+        <SectionHeading
+          index="02"
           id="projects-heading"
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true, margin: "-50px" }}
-          className="text-3xl font-bold text-stone-900 dark:text-stone-50 mb-12"
-        >
-          Projects
-        </motion.h2>
+          title="Selected work"
+          className="mb-12"
+        />
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-50px" }}
-          className="grid gap-6 sm:grid-cols-2"
+          className="grid gap-6 md:grid-cols-2"
         >
-          {projects.map((project) => (
-            <motion.article
-              key={project.name}
+          {caseStudies.map((study) => (
+            <motion.div
+              key={study.name}
               variants={item}
-              className="group rounded-xl border border-edge bg-surface p-6 shadow-sm transition-all hover:shadow-lg hover:border-accent/40"
+              className={study.featured ? "md:col-span-2" : "h-full"}
             >
-              <div className="flex items-start justify-between gap-3">
-                <p className="text-xs font-medium uppercase tracking-wider text-accent">
-                  {project.org}
-                </p>
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-accent hover:underline"
-                  >
-                    <ExternalLink />
-                    Live
-                  </a>
-                )}
-              </div>
-              <h3 className="mt-2 text-lg font-semibold text-stone-900 dark:text-stone-50">
-                {project.name}
-              </h3>
-              <p className="mt-2 text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
-                {project.description}
-              </p>
-              <div className="mt-3 flex items-start gap-2 rounded-lg bg-accent/10 px-3 py-2 text-accent">
-                <TrendingUpIcon />
-                <p className="text-xs font-semibold leading-snug">
-                  {project.impact}
-                </p>
-              </div>
-              <StackTags items={project.stack} />
-            </motion.article>
+              <CaseStudyCard study={study} />
+            </motion.div>
           ))}
         </motion.div>
       </div>

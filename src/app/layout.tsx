@@ -107,7 +107,7 @@ export default function RootLayout({
       "https://github.com/shaikmoabdullah",
       "https://x.com/shaikmoabdullah",
     ],
-    email: "smabdullahblr@gmail.com",
+    email: "shaikmoabdullah@gmail.com",
     image: `${baseUrl}/profile.png`,
   };
 

@@ -7,11 +7,8 @@ import { useActiveSection } from "@/hooks/useActiveSection";
 
 const navLinks = [
   { href: "#about", label: "About" },
-  { href: "#impact", label: "Impact" },
   { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
-  { href: "#skills", label: "Skills" },
-  { href: "#education", label: "Education" },
+  { href: "#projects", label: "Work" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -36,7 +33,7 @@ export function Header() {
         >
           SMA
         </a>
-        <div className="flex items-center gap-4 md:gap-6">
+        <div className="flex items-center gap-3 md:gap-6">
           <ul className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => {
               const sectionId = link.href.slice(1);
@@ -57,6 +54,14 @@ export function Header() {
               );
             })}
           </ul>
+          <a
+            href="/Shaik_Mohammad_Abdullah_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full bg-accent-strong px-3.5 py-1.5 text-sm font-semibold text-accent-contrast transition-colors hover:bg-accent-strong-hover focus:outline-none focus:ring-2 focus:ring-accent-strong focus:ring-offset-2 dark:focus:ring-offset-stone-950"
+          >
+            Resume
+          </a>
           <ThemeToggle />
           <button
             onClick={() => setMobileOpen(!mobileOpen)}

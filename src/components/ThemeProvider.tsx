@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
+import { MotionConfig } from "framer-motion";
 
 type Theme = "light" | "dark";
 
@@ -40,14 +41,14 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   if (!mounted) {
     return (
       <ThemeContext.Provider value={{ theme: "light", toggleTheme }}>
-        {children}
+        <MotionConfig reducedMotion="user">{children}</MotionConfig>
       </ThemeContext.Provider>
     );
   }
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      {children}
+      <MotionConfig reducedMotion="user">{children}</MotionConfig>
     </ThemeContext.Provider>
   );
 }
