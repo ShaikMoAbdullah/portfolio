@@ -38,13 +38,26 @@ const caseStudies: CaseStudy[] = [
     problem:
       "Changing access meant editing the database by hand, and non-technical teams could not look at live data without SQL.",
     did: [
-      "Designed RBAC and ReBAC across 100+ API routes for four personas, plus a self-serve UI to assign and revoke roles.",
+      "Designed project-scoped RBAC and ReBAC across 100+ API routes, with 4 global and 5 project roles, plus a self-serve UI to assign and revoke roles.",
       "Shipped a conversational interface over live PostgreSQL, with chat history, reusable templates, and resizable tables.",
     ],
     result:
       "Provisioning dropped from hours to seconds. Stakeholders query data in plain English.",
     stack: ["Node.js", "GraphQL", "PostgreSQL", "TypeScript", "LLM"],
     liveUrl: "https://karya.in",
+  },
+  {
+    name: "Task platform: preview, health & components",
+    org: "Karya",
+    problem:
+      "Data-collection tasks had to be correct before workers saw them, and test runs could not be allowed to pay workers.",
+    did: [
+      "Designed a Preview stage that validates each task end to end before it goes live. Promotion runs in one database transaction, keeps payouts off during testing, and rebuilds worker assignments in dependency order.",
+      "Shipped task health on the task detail page: 7 automated checks covering assignments, microtasks, completion policy, upstream tasks, avatar linking, rejected work, and boxes, each linking to the screen that fixes it.",
+      "Added 30+ task components, including audio transcription, image annotation, and fill-in-the-blanks, so new tasks can be assembled from configuration.",
+    ],
+    result: "Tasks are validated before launch, with payouts off during testing.",
+    stack: ["TypeScript", "React", "Node.js", "PostgreSQL"],
   },
   {
     name: "Homepage & category discovery",

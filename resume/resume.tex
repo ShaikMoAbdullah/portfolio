@@ -56,7 +56,7 @@
 % Experience / education heading: org (bold, left) + dates (right)
 %                                 role (italic, left) + location (right)
 \newcommand{\entry}[4]{%
-  \begin{tabularx}{\textwidth}{@{}X@{}r@{}}
+  \begin{tabularx}{\linewidth}{@{}X@{}r@{}}
     \textbf{#1} & \textbf{#4} \\
     \textit{#2} & \textit{#3} \\
   \end{tabularx}%
@@ -65,7 +65,7 @@
 
 % Simple two-column heading (no role line): title (left) + meta (right)
 \newcommand{\entrylite}[4]{%
-  \begin{tabularx}{\textwidth}{@{}X@{}r@{}}
+  \begin{tabularx}{\linewidth}{@{}X@{}r@{}}
     \textbf{#1} & \textbf{#3} \\
     \textit{#2} & \textit{#4} \\
   \end{tabularx}%
@@ -94,9 +94,11 @@
   {\small Senior Product Engineer with 5+ years shipping SaaS end to end. Founder of Umrain (\textasciitilde\$40K first-year revenue).}
 \end{center}
 
-%------------------------------- SKILLS ---------------------------------------
+%------------------------------- SKILLS + EDUCATION ---------------------------
+\noindent
+\begin{minipage}[t]{0.66\textwidth}
 \section{Technical Skills}
-\begin{tabularx}{\textwidth}{@{}l X@{}}
+\begin{tabularx}{\linewidth}{@{}l >{\raggedright\arraybackslash}X@{}}
   \skill{Languages}{JavaScript (ES6+), TypeScript, SQL}
   \skill{Frontend}{React, Next.js, Tailwind CSS}
   \skill{Backend \& APIs}{Node.js, GraphQL, Hasura, REST APIs, PostgreSQL}
@@ -104,17 +106,29 @@
   \skill{Testing}{Jest, React Testing Library, Unit \& Integration Testing}
   \skill{Integrations \& Tools}{GitHub API, Google Calendar API, Git, Linux}
 \end{tabularx}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.31\textwidth}
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l >{\raggedright\arraybackslash}X@{}}
+  \skill{Degree}{B.Tech, Computer Science}
+  \skill{University}{REVA University}
+  \skill{Location}{Bengaluru, India}
+  \skill{Dates}{Jun 2017 -- Jul 2021}
+\end{tabularx}
+\end{minipage}
 
 %------------------------------- EXPERIENCE -----------------------------------
 \section{Professional Experience}
 
 \entry{\href{https://karya.in}{Karya}}{Senior Product Engineer}{Bengaluru, India}{Sep 2024 -- Present}
+{\small\textit{Platform for large-scale data collection, task operations, and worker payments.}}
 \begin{itemize}
-  \item Architected a \textbf{fine-grained authorization system} with RBAC and ReBAC, built from scratch across \textbf{100+ API routes}, enforcing access policies for 4 personas (Project Manager, Project Coordinator, Tech Support, Finance Manager).
-  \item Shipped a \textbf{self-serve role-management UI} that lets admins assign, update, and revoke roles in real time---\textbf{cutting access-provisioning time from hours to seconds} and eliminating manual database privilege changes.
+  \item Rebuilt platform authorization as \textbf{project-scoped RBAC and ReBAC} across \textbf{100+ API routes}, with 4 global and 5 project roles, permissions defined in code, and a self-serve role-management UI that cut access provisioning \textbf{from hours to seconds}.
   \item Onboarded \textbf{Google and OpenAI as clients} and \textbf{Anthropic and Microsoft as partners} onto Karya's PaaS platform, leading technical discovery, scoping integration architectures, and managing production deployments.
   \item Designed and shipped a \textbf{Natural Language Query (NLQ)} interface so non-technical stakeholders can query live PostgreSQL databases in plain English, \textbf{removing SQL dependency for end users}.
-  \item Built \textbf{25+ modular task components} for collecting data across voice, touch, and selection formats, letting the platform support a wider range of client data-collection requests, including for workers in low-bandwidth, low-literacy environments.
+  \item Designed a \textbf{task Preview stage} so every task is validated end to end before it goes live. Promotion runs in one database transaction, keeps payouts off during testing, and rebuilds worker assignments in dependency order.
+  \item Shipped \textbf{task health} on the task page with \textbf{7 automated checks} (assignments, microtasks, completion policy, upstream tasks, avatar linking, rejected work, and boxes), each linking to the screen that fixes the issue.
+  \item Built \textbf{30+ modular task components}, including audio transcription, image annotation, and fill-in-the-blanks, so new data-collection tasks can be assembled from configuration, including for workers in low-bandwidth, low-literacy environments.
 \end{itemize}
 
 \entry{\href{https://umrain.in}{Umrain}}{Founder}{Bengaluru, India}{2024 -- Present}
@@ -135,9 +149,5 @@
 \begin{itemize}
   \item Shipped a production-grade \textbf{e-property listing marketplace} enabling landlords to list properties and tenants to browse and enquire; delivered a fully responsive, accessible UI with comprehensive unit and integration test coverage.
 \end{itemize}
-
-%------------------------------- EDUCATION ------------------------------------
-\section{Education}
-\entry{REVA University}{B.Tech, Computer Science}{Bengaluru, India}{Jun 2017 -- Jul 2021}
 
 \end{document}

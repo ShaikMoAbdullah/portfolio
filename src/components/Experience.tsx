@@ -18,9 +18,9 @@ const experiences: Role[] = [
     period: "Sep 2024 – Present",
     location: "Bengaluru",
     highlights: [
-      "Built fine-grained authorization (RBAC and ReBAC) across 100+ API routes, with a self-serve admin UI that cut provisioning from hours to seconds.",
+      "Rebuilt authorization as project-scoped RBAC and ReBAC across 100+ API routes, with a self-serve admin UI that cut provisioning from hours to seconds.",
       "Onboarded Google and OpenAI as clients and Anthropic and Microsoft as partners, from discovery through production.",
-      "Shipped a natural-language query tool so non-technical stakeholders can query live PostgreSQL in plain English.",
+      "Designed a task Preview stage that validates every task end to end before it goes live, and shipped task health with 7 automated checks that link to each fix.",
     ],
   },
   {
