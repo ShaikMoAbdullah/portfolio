@@ -9,11 +9,13 @@ type Role = {
   period: string;
   location: string;
   highlights: string[];
+  url?: string;
 };
 
 const experiences: Role[] = [
   {
     company: "Karya",
+    url: "https://karya.in",
     role: "Senior Product Engineer",
     period: "Sep 2024 – Present",
     location: "Bengaluru",
@@ -25,6 +27,7 @@ const experiences: Role[] = [
   },
   {
     company: "Umrain",
+    url: "https://umrain.in",
     role: "Founder",
     period: "2024 – Present",
     location: "Bengaluru",
@@ -35,6 +38,7 @@ const experiences: Role[] = [
   },
   {
     company: "ZopSmart",
+    url: "https://zopsmart.com",
     role: "Software Engineer",
     period: "Jan 2022 – Aug 2024",
     location: "Bengaluru",
@@ -46,6 +50,7 @@ const experiences: Role[] = [
   },
   {
     company: "MountBlue Technologies",
+    url: "https://mountblue.io",
     role: "Software Engineer",
     period: "Aug 2021 – Jan 2022",
     location: "Bengaluru",
@@ -116,7 +121,19 @@ export function Experience() {
               />
               <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
                 <h3 className="text-xl font-semibold text-stone-900 dark:text-stone-50">
-                  {exp.company}
+                  {exp.url ? (
+                    <a
+                      href={exp.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-accent underline decoration-accent/40 underline-offset-4 transition-colors hover:decoration-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-strong focus-visible:ring-offset-2 dark:focus-visible:ring-offset-stone-950"
+                    >
+                      {exp.company}
+                      <span className="sr-only"> (opens in a new tab)</span>
+                    </a>
+                  ) : (
+                    exp.company
+                  )}
                 </h3>
                 <span className="text-sm text-stone-500 dark:text-stone-400">
                   {exp.period}
