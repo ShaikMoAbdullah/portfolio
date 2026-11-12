@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useSyncExternalStore } from "react";
 import { MotionConfig } from "framer-motion";
 
 type Theme = "light" | "dark";
@@ -12,39 +12,33 @@ type ThemeContextType = {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-const defaultContext: ThemeContextType = {
-  theme: "light",
-  toggleTheme: () => {},
-};
+const listeners = new Set<() => void>();
+
+function subscribe(listener: () => void) {
+  listeners.add(listener);
+  return () => listeners.delete(listener);
+}
+
+function getSnapshot(): Theme {
+  const stored = localStorage.getItem("theme");
+  if (stored === "light" || stored === "dark") return stored;
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
+function getServerSnapshot(): Theme {
+  return "light";
+}
+
+function applyTheme(theme: Theme) {
+  localStorage.setItem("theme", theme);
+  document.documentElement.classList.toggle("dark", theme === "dark");
+  listeners.forEach((listener) => listener());
+}
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("light");
-  const [mounted, setMounted] = useState(false);
+  const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
-  useEffect(() => {
-    setMounted(true);
-    const stored = localStorage.getItem("theme") as Theme | null;
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const initial = stored ?? (prefersDark ? "dark" : "light");
-    setTheme(initial);
-    document.documentElement.classList.toggle("dark", initial === "dark");
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
-    localStorage.setItem("theme", theme);
-    document.documentElement.classList.toggle("dark", theme === "dark");
-  }, [theme, mounted]);
-
-  const toggleTheme = () => setTheme((t) => (t === "light" ? "dark" : "light"));
-
-  if (!mounted) {
-    return (
-      <ThemeContext.Provider value={{ theme: "light", toggleTheme }}>
-        <MotionConfig reducedMotion="user">{children}</MotionConfig>
-      </ThemeContext.Provider>
-    );
-  }
+  const toggleTheme = () => applyTheme(theme === "light" ? "dark" : "light");
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
