@@ -1,5 +1,5 @@
 %==============================================================================
-%  Shaik Mohammad Abdullah — Software Engineer Resume
+%  Shaik Mohammad Abdullah — Product Engineer Resume
 %  Single-column, ATS-friendly, Overleaf-compatible (pdfLaTeX)
 %  Standard packages only. Compile with: pdfLaTeX
 %==============================================================================
@@ -91,20 +91,20 @@
     \mbox{\href{https://github.com/shaikmoabdullah}{\faGithub\ github.com/shaikmoabdullah}} \ \textbar\ %
     \mbox{\href{https://x.com/shaikmoabdullah}{\faTwitter\ x.com/shaikmoabdullah}}
   }\\[4pt]
-  {\small Senior Product Engineer with 5+ years shipping SaaS end to end.}
+  {\small Technical product owner inside an engineering role. 6+ years shipping SaaS from the backlog through launch.}
 \end{center}
 
 %------------------------------- SKILLS + EDUCATION ---------------------------
 \noindent
 \begin{minipage}[t]{0.66\textwidth}
-\section{Technical Skills}
+\section{Skills}
 \begin{tabularx}{\linewidth}{@{}l >{\raggedright\arraybackslash}X@{}}
+  \skill{Product}{PRDs, user stories, backlog grooming, sprint reviews}
   \skill{Languages}{JavaScript (ES6+), TypeScript, SQL}
   \skill{Frontend}{React, Next.js, Tailwind CSS}
-  \skill{Backend \& APIs}{Node.js, GraphQL, Hasura, REST APIs, PostgreSQL}
+  \skill{Backend \& APIs}{Node.js, REST APIs, PostgreSQL}
   \skill{AI \& NLP}{Conversational Interfaces, LLM Integration}
-  \skill{Testing}{Jest, React Testing Library, Unit \& Integration Testing}
-  \skill{Integrations \& Tools}{GitHub API, Google Calendar API, Git, Linux}
+  \skill{Delivery}{Agile, Jira, Confluence, Git}
 \end{tabularx}
 \end{minipage}\hfill
 \begin{minipage}[t]{0.31\textwidth}
@@ -113,32 +113,33 @@
   \skill{Degree}{B.Tech, Computer Science}
   \skill{University}{REVA University}
   \skill{Location}{Bengaluru, India}
-  \skill{Dates}{Jun 2017 -- Jul 2021}
+  \skill{Dates}{2017 -- 2021}
 \end{tabularx}
 \end{minipage}
 
 %------------------------------- EXPERIENCE -----------------------------------
 \section{Professional Experience}
 
-\entry{\href{https://karya.in}{Karya}}{Senior Product Engineer}{Bengaluru, India}{Sep 2024 -- Present}
-{\small\textit{Platform for large-scale data collection, task operations, and worker payments.}}
+\entry{\href{https://karya.in}{Karya}}{Senior Product Engineer}{Bengaluru, India}{2024 -- Present}
+{\small\textit{Platform for large-scale data collection, task operations, and worker payments. Sprint planning, grooming, and reviews with operations, finance, support, and product.}}
 \begin{itemize}
-  \item Rebuilt platform authorization as \textbf{project-scoped RBAC and ReBAC} across \textbf{100+ API routes}, with 4 global and 5 project roles, permissions defined in code, and a self-serve role-management UI that cut access provisioning \textbf{from hours to seconds}.
-  \item Onboarded \textbf{Google and OpenAI as clients} and \textbf{Anthropic and Microsoft as partners} onto Karya's PaaS platform, leading technical discovery, scoping integration architectures, and managing production deployments.
-  \item Designed and shipped a \textbf{Natural Language Query (NLQ)} interface so non-technical stakeholders can query live PostgreSQL databases in plain English, \textbf{removing SQL dependency for end users}.
-  \item Designed a \textbf{task Preview stage} so every task is validated end to end before it goes live. Promotion runs in one database transaction, keeps payouts off during testing, and rebuilds worker assignments in dependency order.
-  \item Shipped \textbf{task health} on the task page with \textbf{7 automated checks} (assignments, microtasks, completion policy, upstream tasks, avatar linking, rejected work, and boxes), each linking to the screen that fixes the issue.
-  \item Built \textbf{30+ modular task components}, including audio transcription, image annotation, and fill-in-the-blanks, so new data-collection tasks can be assembled from configuration, including for workers in low-bandwidth, low-literacy environments.
+  \item Owned \textbf{Platform by Karya} end to end. The product has deployed \textbf{65M+ tasks}, supports \textbf{70+ languages}, and runs in \textbf{6 countries} across the Global South.
+  \item Published programs on that platform include \textbf{Project Vaani} with Google and IISc (\textbf{6,000 hours}, 24K+ speakers, 30 districts), \textbf{Project Apollo} (\textbf{100,000 hours} across 22 languages, 60,000 workers, \textbf{\$2M} disbursed), \textbf{Samiksha} with Microsoft (\textbf{23,000+} real-world queries, \textbf{150,000+} human evaluations), and an \textbf{Anthropic} evaluation (\textbf{10,000} community queries, \textbf{30,000+} tasks, 7 languages).
+  \item Turned task creation into configuration. \textbf{30+ components}, including audio transcription, image annotation, and fill-in-the-blanks, so operations can assemble a new data-collection task, including for low-bandwidth and low-literacy workers, without a new build.
+  \item Owned \textbf{Task Preview} from the problem through launch. Wrote the PRD (user stories, locked decisions, non-goals) and aligned operations, finance, support, and product. \textbf{Every new task} now starts in Preview: operators validate it end to end, payouts stay off during testing, and promotion to Live runs in one transaction.
+  \item Defined \textbf{Task Health} as the checklist on the task page: \textbf{7 automated checks} (assignments, microtasks, completion policy, upstream tasks, avatar linking, rejected work, and boxes). Each check opens the screen that fixes it, so coordinators clear blockers without an engineer.
+  \item Replaced hand-edited database access with project roles and a self-serve UI. \textbf{4 global and 5 project roles}, permissions in code, across \textbf{100+ API routes}. Provisioning went \textbf{from hours to seconds}, and inactive users are denied.
+  \item Shipped \textbf{plain-English queries} over live PostgreSQL, with history and reusable templates, so non-technical stakeholders can read operational data without writing SQL.
 \end{itemize}
 
-\entry{\href{https://zopsmart.com}{ZopSmart}}{Software Engineer}{Bengaluru, India}{Jan 2022 -- Aug 2024}
+\entry{\href{https://zopsmart.com}{ZopSmart}}{Product Engineer}{Bengaluru, India}{2022 -- 2024}
 \begin{itemize}
-  \item \textbf{\href{https://www.kroger.com}{Kroger} (US Grocery e-Commerce):} Core contributor to the homepage and navigation architecture of the \textbf{2nd-largest US grocery e-commerce SaaS}; redesigned category-discovery flows that increased click-through rate by \textbf{3$\times$} and drove a \textbf{12\% lift in product sales}.
-  \item \textbf{\href{https://eazyupdates.com}{EazyUpdates} (Task-Management SaaS):} Engineered a leave-management and payroll-tracking module for HR teams; integrated \textbf{GitHub and Google Calendar APIs} for real-time employee-progress visibility, owning \textbf{50\% of the total product build}.
-  \item \textbf{Smrize (Productivity SaaS):} Built a mobile-first book-summarization platform with native audio playback; optimized mobile rendering performance to achieve a \textbf{20\% traffic increase} and \textbf{24-minute average daily sessions} per user.
+  \item \textbf{\href{https://www.kroger.com}{Kroger} (US Grocery e-Commerce):} Shipped the homepage and category-discovery redesign on the \textbf{2nd-largest US grocery e-commerce SaaS}. Click-through rose \textbf{3$\times$} and product sales rose \textbf{12\%}.
+  \item \textbf{\href{https://eazyupdates.com}{EazyUpdates} (Task-Management SaaS):} Built leave and payroll tracking for HR teams and integrated \textbf{GitHub and Google Calendar APIs} for live progress visibility, owning \textbf{50\% of the product}.
+  \item \textbf{Smrize (Productivity SaaS):} Shipped a mobile-first book-summary app with audio. Traffic rose \textbf{20\%}, with \textbf{24-minute average daily sessions}.
 \end{itemize}
 
-\entry{\href{https://mountblue.io}{MountBlue Technologies}}{Software Engineer}{Bengaluru, India}{Aug 2021 -- Jan 2022}
+\entry{\href{https://mountblue.io}{MountBlue Technologies}}{Software Engineer}{Bengaluru, India}{2021 -- 2022}
 \begin{itemize}
   \item Shipped a production-grade \textbf{e-property listing marketplace} enabling landlords to list properties and tenants to browse and enquire; delivered a fully responsive, accessible UI with comprehensive unit and integration test coverage.
 \end{itemize}

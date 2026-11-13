@@ -17,22 +17,24 @@ const experiences: Role[] = [
     company: "Karya",
     url: "https://karya.in",
     role: "Senior Product Engineer",
-    period: "Sep 2024 – Present",
+    period: "2024 – Present",
     location: "Bengaluru",
     highlights: [
-      "Rebuilt authorization as project-scoped RBAC and ReBAC across 100+ API routes, with a self-serve admin UI that cut provisioning from hours to seconds.",
-      "Onboarded Google and OpenAI as clients and Anthropic and Microsoft as partners, from discovery through production.",
-      "Designed a task Preview stage that validates every task end to end before it goes live, and shipped task health with 7 automated checks that link to each fix.",
+      "Owned Platform by Karya end to end: 65M+ tasks deployed, 70+ languages, and 6 countries across the Global South.",
+      "Programs on the platform include Project Vaani (6,000 hours, 24K+ speakers), Project Apollo (100,000 hours, 60,000 workers, $2M disbursed), Samiksha (23,000+ queries, 150,000+ human evaluations), and an Anthropic evaluation (10,000 queries, 30,000+ tasks).",
+      "Owned Task Preview from the PRD through launch. Every new task starts in Preview, payouts stay off during testing, and promotion to Live runs in one transaction.",
+      "Shipped task health with 7 automated checks and 30+ configurable task components, so operations can launch and repair tasks without an engineer.",
+      "Rebuilt authorization as project-scoped roles across 100+ API routes, with a self-serve UI that cut provisioning from hours to seconds.",
     ],
   },
   {
     company: "ZopSmart",
     url: "https://zopsmart.com",
-    role: "Software Engineer",
-    period: "Jan 2022 – Aug 2024",
+    role: "Product Engineer",
+    period: "2022 – 2024",
     location: "Bengaluru",
     highlights: [
-      "Kroger: redesigned homepage and category discovery, lifting click-through rate 3× and product sales 12%.",
+      "Kroger: shipped the homepage and category-discovery redesign, lifting click-through rate 3× and product sales 12%.",
       "EazyUpdates: built leave and payroll tracking plus GitHub and Google Calendar integrations, owning half the product.",
       "Smrize: shipped a mobile-first book-summary app with audio, growing traffic 20% with 24-minute average sessions.",
     ],
@@ -41,7 +43,7 @@ const experiences: Role[] = [
     company: "MountBlue Technologies",
     url: "https://mountblue.io",
     role: "Software Engineer",
-    period: "Aug 2021 – Jan 2022",
+    period: "2021 – 2022",
     location: "Bengaluru",
     highlights: [
       "Shipped a property-listing marketplace with a responsive UI and unit plus integration tests.",
@@ -62,8 +64,10 @@ const item = {
   show: { y: 0, opacity: 1 },
 };
 
-const METRIC_SPLIT = /(\$\d[\d,]*K?|\d+\+|\d+%|\d+×|\d+x\b|hours to seconds)/g;
-const METRIC_TEST = /^(\$\d[\d,]*K?|\d+\+|\d+%|\d+×|\d+x|hours to seconds)$/;
+const METRIC_SPLIT =
+  /(\$\d[\d,]*(?:\.\d+)?[KMB]?|\d[\d,]*(?:\.\d+)?[KMB]?\+|\d{1,3}(?:,\d{3})+|\d+%|\d+×|\d+x\b|hours to seconds)/g;
+const METRIC_TEST =
+  /^(\$\d[\d,]*(?:\.\d+)?[KMB]?|\d[\d,]*(?:\.\d+)?[KMB]?\+|\d{1,3}(?:,\d{3})+|\d+%|\d+×|\d+x|hours to seconds)$/;
 
 function emphasizeMetrics(text: string) {
   return text.split(METRIC_SPLIT).map((part, i) =>

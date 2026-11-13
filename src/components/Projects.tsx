@@ -19,6 +19,38 @@ type CaseStudy = {
 
 const caseStudies: CaseStudy[] = [
   {
+    name: "Platform by Karya",
+    org: "Karya",
+    featured: true,
+    problem:
+      "Organisations needed one product to create, customise, and deploy data tasks across languages and countries.",
+    did: [
+      "Owned the product end to end: audio, NLP, computer vision, RLHF, and LLM-evaluation tasks, with in-app preview and a human-and-AI validation loop.",
+      "Project Vaani, with Google and IISc: 6,000 hours of voice data, 24K+ speakers, 30 districts.",
+      "Project Apollo: 100,000 hours of conversational speech across 22 languages, 60,000 workers, $2M disbursed.",
+      "Samiksha, with Microsoft: 23,000+ real-world queries and 150,000+ human evaluations.",
+      "Anthropic evaluation: 10,000 community queries and 30,000+ tasks across 7 languages.",
+    ],
+    result:
+      "65M+ tasks deployed, 70+ languages, and 6 countries across the Global South.",
+    stack: ["Platform by Karya"],
+    liveUrl: "https://platform.karya.in",
+  },
+  {
+    name: "Task Preview: nothing goes live untested",
+    org: "Karya",
+    problem:
+      "Data-collection tasks reached workers before anyone had checked them, and a test run could pay workers.",
+    did: [
+      "Wrote the PRD: user stories, locked decisions, and non-goals. Every task is created in Preview. Promotion to Live is one database transaction. Payouts, ledger updates, and payments stay off until the task is Live.",
+      "Aligned operations, finance, support, and product on that rule, then ran it through sprint planning and grooming in Jira.",
+      "Shipped Task Health on the same page: 7 checks, each linking to the screen that fixes the issue, so a coordinator can see why a task is blocked.",
+    ],
+    result:
+      "Every new task is validated before workers see it, and test runs do not pay workers.",
+    stack: ["PRD", "Jira", "TypeScript", "React", "PostgreSQL"],
+  },
+  {
     name: "Access control & plain-English queries",
     org: "Karya",
     problem:
@@ -33,17 +65,17 @@ const caseStudies: CaseStudy[] = [
     liveUrl: "https://karya.in",
   },
   {
-    name: "Task platform: preview, health & components",
+    name: "Tasks assembled from configuration",
     org: "Karya",
     problem:
-      "Data-collection tasks had to be correct before workers saw them, and test runs could not be allowed to pay workers.",
+      "Each new data-collection task needed its own build, which slowed operations and left low-bandwidth, low-literacy workers waiting on engineering.",
     did: [
-      "Designed a Preview stage that validates each task end to end before it goes live. Promotion runs in one database transaction, keeps payouts off during testing, and rebuilds worker assignments in dependency order.",
-      "Shipped task health on the task detail page: 7 automated checks covering assignments, microtasks, completion policy, upstream tasks, avatar linking, rejected work, and boxes, each linking to the screen that fixes it.",
-      "Added 30+ task components, including audio transcription, image annotation, and fill-in-the-blanks, so new tasks can be assembled from configuration.",
+      "Defined 30+ task components, including audio transcription, image annotation, and fill-in-the-blanks, as a backlog operations could assemble from configuration.",
+      "Kept the worker experience usable on low bandwidth and for people with low literacy, so a new task did not require a new interface.",
     ],
-    result: "Tasks are validated before launch, with payouts off during testing.",
-    stack: ["TypeScript", "React", "Node.js", "PostgreSQL"],
+    result:
+      "Operations launch new task types from configuration, without a new build each time.",
+    stack: ["TypeScript", "React", "Node.js"],
   },
   {
     name: "Homepage & category discovery",

@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { SectionHeading } from "./SectionHeading";
 
 const metrics = [
+  { value: "65M+", label: "Tasks deployed", context: "Platform by Karya" },
+  { value: "70+", label: "Languages supported", context: "Platform by Karya" },
+  { value: "6", label: "Countries", context: "Global South" },
   { value: "100+", label: "API routes secured", context: "Karya authorization" },
   { value: "3×", label: "Click-through rate", context: "Kroger homepage" },
   { value: "12%", label: "Product sales lift", context: "Kroger e-commerce" },

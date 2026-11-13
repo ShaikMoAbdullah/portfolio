@@ -1,5 +1,14 @@
 const skillGroups = [
   {
+    title: "Product",
+    items: [
+      "PRDs",
+      "User stories",
+      "Backlog grooming",
+      "Sprint planning and reviews",
+    ],
+  },
+  {
     title: "Languages",
     items: ["JavaScript (ES6+)", "TypeScript", "SQL"],
   },
@@ -9,19 +18,19 @@ const skillGroups = [
   },
   {
     title: "Backend & APIs",
-    items: ["Node.js", "GraphQL", "Hasura", "REST APIs", "PostgreSQL"],
+    items: ["Node.js", "REST APIs", "PostgreSQL"],
   },
   {
     title: "AI & NLP",
     items: ["Conversational Interfaces", "LLM Integration"],
   },
   {
-    title: "Testing",
-    items: ["Jest", "React Testing Library", "Unit & Integration Testing"],
+    title: "Delivery",
+    items: ["Agile", "Jira", "Confluence", "Git"],
   },
   {
-    title: "Tools",
-    items: ["GitHub API", "Google Calendar API", "Git", "Linux"],
+    title: "Testing",
+    items: ["Jest", "React Testing Library", "Unit & Integration Testing"],
   },
 ];
 

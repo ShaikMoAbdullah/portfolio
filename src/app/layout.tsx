@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: "Shaik Mohammad Abdullah | Product Engineer | shaikmoabdullah.com",
   description:
-    "Shaik Mohammad Abdullah (shaikmoabdullah) — product-first engineer in Bangalore. 5+ years shipping SaaS products and platforms end-to-end, turning user problems into measurable business impact. React, TypeScript, Node.js, GraphQL. Portfolio at shaikmoabdullah.com.",
+    "Shaik Mohammad Abdullah (shaikmoabdullah) — product-first engineer in Bangalore. 6+ years shipping SaaS products and platforms end-to-end, turning user problems into measurable business impact. React, TypeScript, Node.js, GraphQL. Portfolio at shaikmoabdullah.com.",
   applicationName: "Shaik Mohammad Abdullah",
   authors: [{ name: "Shaik Mohammad Abdullah", url: baseUrl }],
   creator: "Shaik Mohammad Abdullah",
@@ -27,7 +27,11 @@ export const metadata: Metadata = {
     "shaikmoabdullah.com",
     "Product Engineer",
     "Product-first Engineer",
+    "Technical Product Owner",
     "Senior Product Engineer",
+    "Jira",
+    "Agile",
+    "Confluence",
     "Senior Software Engineer",
     "Full Stack Engineer",
     "React",
@@ -40,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Shaik Mohammad Abdullah | Product Engineer | shaikmoabdullah.com",
     description:
-      "Shaik Mohammad Abdullah (shaikmoabdullah) — product-first engineer in Bangalore. 5+ years shipping SaaS products and platforms end-to-end, turning user problems into measurable business impact. Portfolio at shaikmoabdullah.com.",
+      "Shaik Mohammad Abdullah (shaikmoabdullah) — product-first engineer in Bangalore. 6+ years shipping SaaS products and platforms end-to-end, turning user problems into measurable business impact. Portfolio at shaikmoabdullah.com.",
     url: baseUrl,
     siteName: "Shaik Mohammad Abdullah",
     images: [
@@ -58,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Shaik Mohammad Abdullah | Product Engineer | shaikmoabdullah.com",
     description:
-      "Shaik Mohammad Abdullah (shaikmoabdullah) — product-first engineer in Bangalore. 5+ years shipping SaaS products and platforms end-to-end, turning user problems into measurable business impact.",
+      "Shaik Mohammad Abdullah (shaikmoabdullah) — product-first engineer in Bangalore. 6+ years shipping SaaS products and platforms end-to-end, turning user problems into measurable business impact.",
   },
   alternates: {
     canonical: baseUrl,
@@ -83,11 +87,12 @@ export default function RootLayout({
     url: baseUrl,
     jobTitle: "Product Engineer",
     description:
-      "Product-first engineer with 5+ years shipping SaaS products and platforms end-to-end — from user discovery and UX to architecture, launch, and growth. Based in Bangalore, India.",
+      "Product-first engineer with 6+ years shipping SaaS products and platforms end-to-end — from user discovery and UX to architecture, launch, and growth. Based in Bangalore, India.",
     knowsAbout: [
+      "Product Ownership",
       "Product Engineering",
-      "Product Strategy",
-      "Product Discovery",
+      "PRDs and user stories",
+      "Agile",
       "SaaS",
       "React",
       "TypeScript",

@@ -69,10 +69,9 @@ export function Hero() {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="mt-4 max-w-xl text-stone-600 dark:text-stone-400 leading-relaxed"
             >
-              Product-minded engineer who owns outcomes end-to-end from user
-              discovery and UX to architecture, launch, and growth. 5+ years
-              shipping SaaS products and platforms, turning real user problems
-              into measurable business impact.
+              Writes the spec and ships it. 6+ years taking a task platform
+              from the PRD and the backlog through launch, with operations,
+              finance, support, and product in the room.
             </motion.p>
             <motion.div
               initial={{ y: 20, opacity: 0 }}
