@@ -14,9 +14,9 @@ const baseUrl = "https://shaikmoabdullah.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: "Shaik Mohammad Abdullah | Product Engineer | shaikmoabdullah.com",
+  title: "Shaik Mohammad Abdullah | Product Owner | shaikmoabdullah.com",
   description:
-    "Shaik Mohammad Abdullah (shaikmoabdullah) — product-first engineer in Bangalore. 6+ years shipping SaaS products and platforms end-to-end, turning user problems into measurable business impact. React, TypeScript, Node.js, GraphQL. Portfolio at shaikmoabdullah.com.",
+    "Shaik Mohammad Abdullah (shaikmoabdullah) — product owner in Bangalore. 5+ years owning roadmaps, backlogs, and prioritization for SaaS products and platforms, taking user problems from PRD and user stories through launch. React, TypeScript, Node.js, PostgreSQL. Portfolio at shaikmoabdullah.com.",
   applicationName: "Shaik Mohammad Abdullah",
   authors: [{ name: "Shaik Mohammad Abdullah", url: baseUrl }],
   creator: "Shaik Mohammad Abdullah",
@@ -25,26 +25,24 @@ export const metadata: Metadata = {
     "shaik mohammad abdullah",
     "shaikmoabdullah",
     "shaikmoabdullah.com",
-    "Product Engineer",
-    "Product-first Engineer",
+    "Product Owner",
     "Technical Product Owner",
     "Senior Product Engineer",
+    "Roadmapping",
+    "Backlog prioritization",
     "Jira",
     "Agile",
-    "Confluence",
-    "Senior Software Engineer",
-    "Full Stack Engineer",
     "React",
     "TypeScript",
     "Node.js",
-    "GraphQL",
+    "PostgreSQL",
     "Bangalore",
     "Bengaluru",
   ],
   openGraph: {
-    title: "Shaik Mohammad Abdullah | Product Engineer | shaikmoabdullah.com",
+    title: "Shaik Mohammad Abdullah | Product Owner | shaikmoabdullah.com",
     description:
-      "Shaik Mohammad Abdullah (shaikmoabdullah) — product-first engineer in Bangalore. 6+ years shipping SaaS products and platforms end-to-end, turning user problems into measurable business impact. Portfolio at shaikmoabdullah.com.",
+      "Shaik Mohammad Abdullah (shaikmoabdullah) — product owner in Bangalore. 5+ years owning roadmaps, backlogs, and prioritization for SaaS products and platforms, taking user problems from PRD and user stories through launch. Portfolio at shaikmoabdullah.com.",
     url: baseUrl,
     siteName: "Shaik Mohammad Abdullah",
     images: [
@@ -60,9 +58,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shaik Mohammad Abdullah | Product Engineer | shaikmoabdullah.com",
+    title: "Shaik Mohammad Abdullah | Product Owner | shaikmoabdullah.com",
     description:
-      "Shaik Mohammad Abdullah (shaikmoabdullah) — product-first engineer in Bangalore. 6+ years shipping SaaS products and platforms end-to-end, turning user problems into measurable business impact.",
+      "Shaik Mohammad Abdullah (shaikmoabdullah) — product owner in Bangalore. 5+ years owning roadmaps, backlogs, and prioritization for SaaS products and platforms, taking user problems from PRD and user stories through launch.",
   },
   alternates: {
     canonical: baseUrl,
@@ -85,21 +83,21 @@ export default function RootLayout({
     name: "Shaik Mohammad Abdullah",
     alternateName: ["shaikmoabdullah", "shaikmoabdullah.com"],
     url: baseUrl,
-    jobTitle: "Product Engineer",
+    jobTitle: "Product Owner",
     description:
-      "Product-first engineer with 6+ years shipping SaaS products and platforms end-to-end — from user discovery and UX to architecture, launch, and growth. Based in Bangalore, India.",
+      "Product owner with 5+ years owning roadmaps, backlogs, and prioritization for SaaS products and platforms, from PRD and user stories through launch. Based in Bangalore, India.",
     knowsAbout: [
       "Product Ownership",
-      "Product Engineering",
+      "Roadmapping",
+      "Backlog prioritization",
       "PRDs and user stories",
+      "Acceptance criteria",
       "Agile",
       "SaaS",
       "React",
       "TypeScript",
       "Node.js",
-      "GraphQL",
       "PostgreSQL",
-      "Full Stack Development",
     ],
     address: {
       "@type": "PostalAddress",
@@ -119,9 +117,9 @@ export default function RootLayout({
   const webPageSchema = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: "Shaik Mohammad Abdullah | Product Engineer | shaikmoabdullah.com",
+    name: "Shaik Mohammad Abdullah | Product Owner | shaikmoabdullah.com",
     description:
-      "Portfolio of Shaik Mohammad Abdullah (shaikmoabdullah) — product-first engineer in Bangalore. Experience, projects, skills, and contact.",
+      "Portfolio of Shaik Mohammad Abdullah (shaikmoabdullah) — product owner in Bangalore. Experience, projects, skills, and contact.",
     url: baseUrl,
     mainEntity: { "@id": `${baseUrl}#person` },
     author: { "@type": "Person", name: "Shaik Mohammad Abdullah", url: baseUrl },

@@ -61,7 +61,7 @@ export function Hero() {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="mt-2 text-lg font-medium text-stone-700 dark:text-stone-300"
             >
-              Product Engineer
+              Product Owner
             </motion.p>
             <motion.p
               initial={{ y: 20, opacity: 0 }}
@@ -69,9 +69,10 @@ export function Hero() {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="mt-4 max-w-xl text-stone-600 dark:text-stone-400 leading-relaxed"
             >
-              Writes the spec and ships it. 6+ years taking a task platform
-              from the PRD and the backlog through launch, with operations,
-              finance, support, and product in the room.
+              Owns the roadmap, backlog, and prioritization. 5+ years taking
+              SaaS and task platforms from the PRD and user stories through
+              launch, with operations, finance, support, and product in the
+              room.
             </motion.p>
             <motion.div
               initial={{ y: 20, opacity: 0 }}

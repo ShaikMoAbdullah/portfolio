@@ -20,11 +20,13 @@ const experiences: Role[] = [
     period: "2024 – Present",
     location: "Bengaluru",
     highlights: [
-      "Owned Platform by Karya end to end: 65M+ tasks deployed, 70+ languages, and 6 countries across the Global South.",
-      "Programs on the platform include Project Vaani (6,000 hours, 24K+ speakers), Project Apollo (100,000 hours, 60,000 workers, $2M disbursed), Samiksha (23,000+ queries, 150,000+ human evaluations), and an Anthropic evaluation (10,000 queries, 30,000+ tasks).",
-      "Owned Task Preview from the PRD through launch. Every new task starts in Preview, payouts stay off during testing, and promotion to Live runs in one transaction.",
-      "Shipped task health with 7 automated checks and 30+ configurable task components, so operations can launch and repair tasks without an engineer.",
-      "Rebuilt authorization as project-scoped roles across 100+ API routes, with a self-serve UI that cut provisioning from hours to seconds.",
+      "Owned the roadmap and backlog for Platform by Karya: 65M+ tasks deployed, 70+ languages, and 6 countries across the Global South.",
+      "Worked with Google, IISc, Microsoft, and Anthropic on programs including Project Vaani (6,000 hours, 24K+ speakers), Project Apollo (100,000 hours, 60,000 workers, $2M disbursed), Samiksha (23,000+ queries, 150,000+ human evaluations), and an Anthropic evaluation (10,000 queries, 30,000+ tasks).",
+      "Turned task creation into configuration with 30+ components, so operations can assemble a new data-collection task without a new build.",
+      "Wrote the Task Preview PRD with user stories, acceptance criteria, and non-goals, then aligned operations, finance, support, and product. Every new task starts in Preview, payouts stay off during testing, and promotion to Live runs in one transaction.",
+      "Defined Task Health as 7 automated checks, each linking to the screen that fixes the issue, so coordinators clear blockers without an engineer.",
+      "Replaced hand-edited database access with a self-serve roles UI: 4 global and 5 project roles across 100+ API routes. Provisioning went from hours to seconds.",
+      "Shipped plain-English queries over live PostgreSQL, so internal non-technical teams can look up operational data without asking the tech team.",
     ],
   },
   {
@@ -34,9 +36,9 @@ const experiences: Role[] = [
     period: "2022 – 2024",
     location: "Bengaluru",
     highlights: [
-      "Kroger: shipped the homepage and category-discovery redesign, lifting click-through rate 3× and product sales 12%.",
-      "EazyUpdates: built leave and payroll tracking plus GitHub and Google Calendar integrations, owning half the product.",
-      "Smrize: shipped a mobile-first book-summary app with audio, growing traffic 20% with 24-minute average sessions.",
+      "Kroger: shipped the homepage and category-discovery redesign on the 2nd-largest US grocery e-commerce SaaS, lifting click-through 3× and product sales 12%.",
+      "EazyUpdates: owned 50% of the product roadmap, including leave and payroll tracking for HR teams and GitHub and Google Calendar integrations.",
+      "Smrize: shipped a mobile-first book-summary app with audio, growing traffic 20% with 24-minute average daily sessions.",
     ],
   },
   {
@@ -46,7 +48,7 @@ const experiences: Role[] = [
     period: "2021 – 2022",
     location: "Bengaluru",
     highlights: [
-      "Shipped a property-listing marketplace with a responsive UI and unit plus integration tests.",
+      "Shipped the e-property listing marketplace with a responsive, accessible UI and unit and integration test coverage.",
     ],
   },
 ];

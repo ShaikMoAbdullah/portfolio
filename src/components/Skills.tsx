@@ -2,35 +2,21 @@ const skillGroups = [
   {
     title: "Product",
     items: [
-      "PRDs",
+      "Roadmapping",
+      "Backlog prioritization",
       "User stories",
-      "Backlog grooming",
-      "Sprint planning and reviews",
+      "Acceptance criteria",
+      "KPI definition",
+      "PRDs",
     ],
   },
   {
-    title: "Languages",
-    items: ["JavaScript (ES6+)", "TypeScript", "SQL"],
-  },
-  {
-    title: "Frontend",
-    items: ["React", "Next.js", "Tailwind CSS"],
-  },
-  {
-    title: "Backend & APIs",
-    items: ["Node.js", "REST APIs", "PostgreSQL"],
-  },
-  {
-    title: "AI & NLP",
-    items: ["Conversational Interfaces", "LLM Integration"],
-  },
-  {
     title: "Delivery",
-    items: ["Agile", "Jira", "Confluence", "Git"],
+    items: ["Agile", "Jira", "Sprint planning", "Defect triage"],
   },
   {
-    title: "Testing",
-    items: ["Jest", "React Testing Library", "Unit & Integration Testing"],
+    title: "Technical",
+    items: ["JavaScript", "TypeScript", "SQL", "React", "Node.js", "PostgreSQL"],
   },
 ];
 
