@@ -19,20 +19,6 @@ type CaseStudy = {
 
 const caseStudies: CaseStudy[] = [
   {
-    name: "Umrain",
-    org: "Founder",
-    featured: true,
-    problem:
-      "Planning Umrah usually means going through agents, with opaque pricing and little say in the itinerary.",
-    did: [
-      "Built a self-serve platform that generates home-to-home itineraries from each traveller's budget, preferences, and schedule.",
-      "Ran product, engineering, vendor partnerships, pricing, and customer support as a solo founder.",
-    ],
-    result: "~$40K revenue in the first year, bootstrapped.",
-    stack: ["Product", "Travel-tech", "Operations"],
-    liveUrl: "https://umrain.in",
-  },
-  {
     name: "Access control & plain-English queries",
     org: "Karya",
     problem:

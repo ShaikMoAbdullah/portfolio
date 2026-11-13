@@ -26,17 +26,6 @@ const experiences: Role[] = [
     ],
   },
   {
-    company: "Umrain",
-    url: "https://umrain.in",
-    role: "Founder",
-    period: "2024 – Present",
-    location: "Bengaluru",
-    highlights: [
-      "Founded and solo-built a bootstrapped platform for planning Umrah without agents.",
-      "Shipped self-serve, home-to-home itineraries shaped by budget, preferences, and schedule.",
-    ],
-  },
-  {
     company: "ZopSmart",
     url: "https://zopsmart.com",
     role: "Software Engineer",

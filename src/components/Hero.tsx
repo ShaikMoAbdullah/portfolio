@@ -61,7 +61,7 @@ export function Hero() {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="mt-2 text-lg font-medium text-stone-700 dark:text-stone-300"
             >
-              Product Engineer · Founder of Umrain
+              Product Engineer
             </motion.p>
             <motion.p
               initial={{ y: 20, opacity: 0 }}
@@ -71,8 +71,8 @@ export function Hero() {
             >
               Product-minded engineer who owns outcomes end-to-end from user
               discovery and UX to architecture, launch, and growth. 5+ years
-              shipping SaaS products and platforms (and founding my own),
-              turning real user problems into measurable business impact.
+              shipping SaaS products and platforms, turning real user problems
+              into measurable business impact.
             </motion.p>
             <motion.div
               initial={{ y: 20, opacity: 0 }}

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: "Shaik Mohammad Abdullah | Product Engineer | shaikmoabdullah.com",
   description:
-    "Shaik Mohammad Abdullah (shaikmoabdullah) — product-first engineer in Bangalore. 5+ years shipping SaaS products and platforms end-to-end (and founding Umrain), turning user problems into measurable business impact. React, TypeScript, Node.js, GraphQL. Portfolio at shaikmoabdullah.com.",
+    "Shaik Mohammad Abdullah (shaikmoabdullah) — product-first engineer in Bangalore. 5+ years shipping SaaS products and platforms end-to-end, turning user problems into measurable business impact. React, TypeScript, Node.js, GraphQL. Portfolio at shaikmoabdullah.com.",
   applicationName: "Shaik Mohammad Abdullah",
   authors: [{ name: "Shaik Mohammad Abdullah", url: baseUrl }],
   creator: "Shaik Mohammad Abdullah",
@@ -83,7 +83,7 @@ export default function RootLayout({
     url: baseUrl,
     jobTitle: "Product Engineer",
     description:
-      "Product-first engineer with 5+ years shipping SaaS products and platforms end-to-end — from user discovery and UX to architecture, launch, and growth. Founder of Umrain. Based in Bangalore, India.",
+      "Product-first engineer with 5+ years shipping SaaS products and platforms end-to-end — from user discovery and UX to architecture, launch, and growth. Based in Bangalore, India.",
     knowsAbout: [
       "Product Engineering",
       "Product Strategy",

@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { SectionHeading } from "./SectionHeading";
 
 const metrics = [
-  { value: "$40K", label: "First-year revenue", context: "Umrain (founder)" },
   { value: "100+", label: "API routes secured", context: "Karya authorization" },
   { value: "3×", label: "Click-through rate", context: "Kroger homepage" },
   { value: "12%", label: "Product sales lift", context: "Kroger e-commerce" },
@@ -28,7 +27,7 @@ export function Impact() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-2 gap-6 sm:grid-cols-4"
+          className="grid grid-cols-2 gap-6 sm:grid-cols-3"
         >
           {metrics.map((metric, i) => (
             <motion.div
