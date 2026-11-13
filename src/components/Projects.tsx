@@ -64,32 +64,6 @@ const caseStudies: CaseStudy[] = [
     stack: ["Node.js", "GraphQL", "PostgreSQL", "TypeScript", "LLM"],
     liveUrl: "https://karya.in",
   },
-  {
-    name: "Tasks assembled from configuration",
-    org: "Karya",
-    problem:
-      "Each new data-collection task needed its own build, which slowed operations and left low-bandwidth, low-literacy workers waiting on engineering.",
-    did: [
-      "Defined 30+ task components, including audio transcription, image annotation, and fill-in-the-blanks, as a backlog operations could assemble from configuration.",
-      "Kept the worker experience usable on low bandwidth and for people with low literacy, so a new task did not require a new interface.",
-    ],
-    result:
-      "Operations launch new task types from configuration, without a new build each time.",
-    stack: ["TypeScript", "React", "Node.js"],
-  },
-  {
-    name: "Homepage & category discovery",
-    org: "Kroger · ZopSmart",
-    problem:
-      "Shoppers had trouble finding products through the homepage and category navigation of a major US grocery site.",
-    did: [
-      "Contributed to the homepage and navigation architecture of the 2nd-largest US grocery e-commerce platform.",
-      "Redesigned category-discovery flows so products were easier to find.",
-    ],
-    result: "3× click-through rate and a 12% lift in product sales.",
-    stack: ["TypeScript", "React", "Jest"],
-    liveUrl: "https://www.kroger.com",
-  },
 ];
 
 const container = {

@@ -12,7 +12,7 @@ const skillGroups = [
   },
   {
     title: "Delivery",
-    items: ["Agile", "Jira", "Sprint planning", "Defect triage"],
+    items: ["Agile", "Jira", "Confluence", "Sprint planning", "Defect triage"],
   },
   {
     title: "Technical",
