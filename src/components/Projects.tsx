@@ -51,6 +51,20 @@ const caseStudies: CaseStudy[] = [
     stack: ["PRD", "Jira", "TypeScript", "React", "PostgreSQL"],
   },
   {
+    name: "Payout ledger: pay only for work that qualifies",
+    org: "Karya",
+    problem:
+      "The worker ledger could update while a task was still a test, so trial work looked like earnings.",
+    did: [
+      "Left payouts, ledger updates, and payments untouched until a task left Preview.",
+      "Posting happens in one transaction with the move to Live, so the task and the right to pay change together or not at all.",
+      "Operations approves that posting. Finance and support read the same state.",
+    ],
+    result:
+      "Nothing posts to the ledger for a test. Pay is recorded only after the work is approved and live.",
+    stack: ["PRD", "PostgreSQL", "TypeScript"],
+  },
+  {
     name: "Access control & plain-English queries",
     org: "Karya",
     problem:

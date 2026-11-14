@@ -27,6 +27,8 @@ const experiences: Role[] = [
       "Defined Task Health as 7 automated checks, each linking to the screen that fixes the issue, so coordinators clear blockers without an engineer.",
       "Replaced hand-edited database access with a self-serve roles UI: 4 global and 5 project roles across 100+ API routes. Provisioning went from hours to seconds.",
       "Shipped plain-English queries over live PostgreSQL, so internal non-technical teams can look up operational data without asking the tech team.",
+      "Worked directly with the CTO on the roadmap, backlog, and prioritization.",
+      "Mentored junior engineers on backlog prioritization and product thinking.",
     ],
   },
   {
@@ -36,6 +38,7 @@ const experiences: Role[] = [
     period: "2022 – 2024",
     location: "Bengaluru",
     highlights: [
+      "Worked closely with the CTO on prioritization and what shipped.",
       "Kroger: shipped the homepage and category-discovery redesign on the 2nd-largest US grocery e-commerce SaaS, lifting click-through 3× and product sales 12%.",
       "EazyUpdates: owned 50% of the product roadmap, including leave and payroll tracking for HR teams and GitHub and Google Calendar integrations.",
       "Smrize: shipped a mobile-first book-summary app with audio, growing traffic 20% with 24-minute average daily sessions.",

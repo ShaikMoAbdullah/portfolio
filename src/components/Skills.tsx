@@ -8,6 +8,7 @@ const skillGroups = [
       "Acceptance criteria",
       "KPI definition",
       "PRDs",
+      "Figma",
     ],
   },
   {
