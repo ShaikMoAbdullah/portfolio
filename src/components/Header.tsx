@@ -55,7 +55,7 @@ export function Header() {
             })}
           </ul>
           <a
-            href="/Shaik_Mohammad_Abdullah_Resume.pdf"
+            href="/Shaik_Mohammad_Abdullah_Product_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full bg-accent-strong px-3.5 py-1.5 text-sm font-semibold text-accent-contrast transition-colors hover:bg-accent-strong-hover focus:outline-none focus:ring-2 focus:ring-accent-strong focus:ring-offset-2 dark:focus:ring-offset-stone-950"
@@ -70,12 +70,26 @@ export function Header() {
             aria-expanded={mobileOpen}
           >
             {mobileOpen ? (
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="h-5 w-5"
+              >
                 <line x1="18" y1="6" x2="6" y2="18" />
                 <line x1="6" y1="6" x2="18" y2="18" />
               </svg>
             ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="h-5 w-5"
+              >
                 <line x1="3" y1="6" x2="21" y2="6" />
                 <line x1="3" y1="12" x2="21" y2="12" />
                 <line x1="3" y1="18" x2="21" y2="18" />
