@@ -1,0 +1,144 @@
+%==============================================================================
+%  Shaik Mohammad Abdullah — Technical Resume
+%  Single-column, ATS-friendly, Overleaf-compatible (pdfLaTeX)
+%  Standard packages only. Compile with: pdfLaTeX
+%==============================================================================
+\documentclass[letterpaper,10.5pt]{article}
+
+%------------------------------- PACKAGES -------------------------------------
+\usepackage[T1]{fontenc}            % proper font encoding (selectable text -> ATS safe)
+\usepackage[utf8]{inputenc}         % utf-8 input
+\usepackage{lmodern}                % clean, professional Latin Modern font
+\usepackage[margin=0.5in]{geometry} % tight, recruiter-friendly margins
+\usepackage{titlesec}               % section title formatting
+\usepackage{enumitem}               % compact, controllable lists
+\usepackage{tabularx}               % flexible tables for skills + headings
+\usepackage{xcolor}                 % subtle accent color
+\usepackage[hidelinks]{hyperref}    % clickable links, no ugly boxes
+\usepackage{microtype}              % superior typography / spacing
+\usepackage{fontawesome5}           % light icons (header only); remove if unwanted
+
+%------------------------------- COLORS ---------------------------------------
+\definecolor{primary}{HTML}{1A1A1A}     % near-black body text
+\definecolor{accent}{HTML}{2B4C7E}      % subtle professional blue
+\definecolor{rule}{HTML}{B0B0B0}        % light divider rule
+
+%------------------------------- GLOBAL STYLE ---------------------------------
+\color{primary}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+\urlstyle{same}
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+% Tighten line spacing slightly for density without crowding
+\linespread{1.04}
+
+%------------------------------- SECTION TITLES -------------------------------
+\titleformat{\section}
+  {\large\bfseries\scshape\color{accent}}   % small-caps, bold, accent color
+  {}{0pt}{}[\color{rule}\titlerule]
+\titlespacing*{\section}{0pt}{6pt}{4pt}
+
+%------------------------------- LIST STYLE -----------------------------------
+\setlist[itemize]{
+  leftmargin=1.3em,
+  topsep=2pt,
+  itemsep=2pt,
+  parsep=0pt,
+  label=\textcolor{accent}{\small$\bullet$}
+}
+
+%==============================================================================
+%  REUSABLE MACROS / COMPONENTS
+%==============================================================================
+
+% Experience / education heading: org (bold, left) + dates (right)
+%                                 role (italic, left) + location (right)
+\newcommand{\entry}[4]{%
+  \begin{tabularx}{\linewidth}{@{}X@{}r@{}}
+    \textbf{#1} & \textbf{#4} \\
+    \textit{#2} & \textit{#3} \\
+  \end{tabularx}%
+  \vspace{1pt}
+}
+
+% Skill row: category (bold) : items
+\newcommand{\skill}[2]{\textbf{#1} & #2 \\}
+
+%==============================================================================
+%  DOCUMENT
+%==============================================================================
+\begin{document}
+
+%------------------------------- HEADER ---------------------------------------
+\begin{center}
+  {\Huge\bfseries Shaik Mohammad Abdullah}\\[5pt]
+  {\footnotesize
+    \href{mailto:shaikmoabdullah@gmail.com}{\faEnvelope\ shaikmoabdullah@gmail.com} \ \textbar\ %
+    \href{https://wa.me/918748057505}{\faWhatsapp\ +91-8748057505} \ \textbar\ %
+    \href{https://shaikmoabdullah.com}{\faGlobe\ shaikmoabdullah.com} \ \textbar\ %
+    \mbox{\href{https://linkedin.com/in/shaikmoabdullah}{\faLinkedin\ linkedin.com/in/shaikmoabdullah}}\\
+    \mbox{\href{https://github.com/shaikmoabdullah}{\faGithub\ github.com/shaikmoabdullah}} \ \textbar\ %
+    \mbox{\href{https://x.com/shaikmoabdullah}{\faTwitter\ x.com/shaikmoabdullah}}
+  }\\[4pt]
+  {\small Senior Product Engineer with 5+ years shipping SaaS end to end. Founder of Umrain (\textasciitilde\$40K first-year revenue).}
+\end{center}
+
+%------------------------------- SKILLS + EDUCATION ---------------------------
+\noindent
+\begin{minipage}[t]{0.66\textwidth}
+\section{Technical Skills}
+\begin{tabularx}{\linewidth}{@{}l >{\raggedright\arraybackslash}X@{}}
+  \skill{Languages}{JavaScript (ES6+), TypeScript, SQL}
+  \skill{Frontend}{React, Next.js, Tailwind CSS}
+  \skill{Backend \& APIs}{Node.js, GraphQL, Hasura, REST APIs, PostgreSQL}
+  \skill{AI \& NLP}{Conversational Interfaces, LLM Integration}
+  \skill{Testing}{Jest, React Testing Library, Unit \& Integration Testing}
+  \skill{Integrations \& Tools}{GitHub API, Google Calendar API, Git, Linux}
+\end{tabularx}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.31\textwidth}
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l >{\raggedright\arraybackslash}X@{}}
+  \skill{Degree}{B.Tech, Computer Science}
+  \skill{University}{REVA University}
+  \skill{Location}{Bengaluru, India}
+  \skill{Dates}{Jun 2017 -- Jul 2021}
+\end{tabularx}
+\end{minipage}
+
+%------------------------------- EXPERIENCE -----------------------------------
+\section{Professional Experience}
+
+\entry{\href{https://karya.in}{Karya}}{Senior Product Engineer}{Bengaluru, India}{Sep 2024 -- Present}
+{\small\textit{Platform for large-scale data collection, task operations, and worker payments.}}
+\begin{itemize}
+  \item Rebuilt platform authorization as \textbf{project-scoped RBAC and ReBAC} across \textbf{100+ API routes}, with \textbf{4 global and 5 project roles}, permissions defined in code, and a self-serve role-management UI that cut access provisioning \textbf{from hours to seconds}.
+  \item Onboarded \textbf{Google} and \textbf{OpenAI} as clients and \textbf{Anthropic} and \textbf{Microsoft} as partners onto Karya's PaaS platform, leading technical discovery, scoping integration architectures, and managing production deployments.
+  \item Designed and shipped a \textbf{Natural Language Query (NLQ)} interface so non-technical stakeholders can query live \textbf{PostgreSQL} databases in plain English, removing SQL dependency for end users.
+  \item Designed a task \textbf{Preview} stage so every task is validated end to end before it goes live. Promotion runs in \textbf{one database transaction}, keeps payouts off during testing, and rebuilds worker assignments in dependency order.
+  \item Shipped \textbf{task health} on the task page with \textbf{7 automated checks} (assignments, microtasks, completion policy, upstream tasks, avatar linking, rejected work, and boxes), each linking to the screen that fixes the issue.
+  \item Built \textbf{30+ modular task components}, including audio transcription, image annotation, and fill-in-the-blanks, so new data-collection tasks can be assembled from configuration, including for workers in low-bandwidth, low-literacy environments.
+\end{itemize}
+
+\entry{Umrain}{Founder}{Bengaluru, India}{2024 -- Present}
+\begin{itemize}
+  \item Founded a travel-tech startup helping travelers plan and book Umrah independently, without traditional agents, and drove \textbf{\textasciitilde\$40K in first-year revenue} as a bootstrapped, solo-built venture.
+  \item Built a self-serve platform that generates fully customized, end-to-end (home-to-home) Umrah itineraries tailored to each traveler's preferences, budget, and schedule.
+  \item Owned product, technology, operations, vendor partnerships, and customer support end to end, including supplier and ground logistics, pricing, and compliance.
+\end{itemize}
+
+\entry{\href{https://zopsmart.com}{ZopSmart}}{Software Engineer}{Bengaluru, India}{Jan 2022 -- Aug 2024}
+\begin{itemize}
+  \item \textbf{\href{https://www.kroger.com}{Kroger} (US Grocery e-Commerce):} Core contributor to the homepage and navigation architecture of the \textbf{2nd-largest US grocery e-commerce SaaS}; redesigned category-discovery flows that increased click-through rate by \textbf{3$\times$} and drove a \textbf{12\%} lift in product sales.
+  \item \textbf{\href{https://eazyupdates.com}{EazyUpdates} (Task-Management SaaS):} Engineered a leave-management and payroll-tracking module for HR teams; integrated \textbf{GitHub and Google Calendar APIs} for real-time employee-progress visibility, owning \textbf{50\% of the total product build}.
+  \item \textbf{Smrize (Productivity SaaS):} Built a mobile-first book-summarization platform with native audio playback; optimized mobile rendering performance to achieve a \textbf{20\% traffic increase} and \textbf{24-minute average daily sessions} per user.
+\end{itemize}
+
+\entry{\href{https://mountblue.io}{MountBlue Technologies}}{Software Engineer}{Bengaluru, India}{Aug 2021 -- Jan 2022}
+\begin{itemize}
+  \item Shipped a production-grade \textbf{e-property listing marketplace} enabling landlords to list properties and tenants to browse and enquire; delivered a fully responsive, accessible UI with comprehensive unit and integration test coverage.
+\end{itemize}
+
+\end{document}
