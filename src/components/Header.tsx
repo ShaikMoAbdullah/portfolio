@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, Search, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navLinks, profile } from "@/data/site";
@@ -42,15 +42,6 @@ export function Header() {
           })}
         </ul>
         <div className="flex items-center gap-1 sm:gap-2">
-          <button
-            type="button"
-            onClick={() => window.dispatchEvent(new Event("open-palette"))}
-            className="flex items-center gap-2 rounded-full px-3 py-2 text-sm text-muted transition-colors hover:bg-surface-2 hover:text-foreground"
-            aria-label="Open search. Command K or Control K."
-          >
-            <Search className="h-4 w-4" />
-            <kbd className="hidden font-sans text-xs text-faint sm:inline">⌘K</kbd>
-          </button>
           <a
             href={profile.resume}
             target="_blank"

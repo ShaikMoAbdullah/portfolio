@@ -5,7 +5,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { SkipToContent } from "@/components/SkipToContent";
 import { Header } from "@/components/Header";
-import { CommandPalette } from "@/components/CommandPalette";
 import { BackToTop } from "@/components/BackToTop";
 
 const geist = Geist({
@@ -165,7 +164,6 @@ export default function RootLayout({
         <ThemeProvider>
           <SkipToContent />
           <Header />
-          <CommandPalette />
           {children}
           <BackToTop />
         </ThemeProvider>
