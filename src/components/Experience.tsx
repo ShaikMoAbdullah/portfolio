@@ -32,26 +32,28 @@ const experiences: Role[] = [
     ],
   },
   {
+    company: "Umrain",
+    url: "https://umrain.in",
+    role: "Founder",
+    period: "2023 – 2025",
+    location: "Bengaluru",
+    highlights: [
+      "Solo-founded a bootstrapped product for planning and booking Umrah without agents. Drove $43K revenue over the period.",
+      "Stopped in 2025: operations could not scale past IATA certification and Saudi Arabia travel regulations.",
+      "Shipped a self-serve flow from preferences, budget, and schedule to a home-to-home itinerary, with a written, itemised quote before booking.",
+    ],
+  },
+  {
     company: "ZopSmart",
     url: "https://zopsmart.com",
     role: "Product Engineer",
-    period: "2022 – 2024",
+    period: "2021 – 2024",
     location: "Bengaluru",
     highlights: [
       "Worked closely with the CTO on prioritization and what shipped.",
       "Kroger: shipped the homepage and category-discovery redesign on the 2nd-largest US grocery e-commerce SaaS, lifting click-through 3× and product sales 12%.",
       "EazyUpdates: owned 50% of the product roadmap, including leave and payroll tracking for HR teams and GitHub and Google Calendar integrations.",
       "Smrize: shipped a mobile-first book-summary app with audio, growing traffic 20% with 24-minute average daily sessions.",
-    ],
-  },
-  {
-    company: "MountBlue Technologies",
-    url: "https://mountblue.io",
-    role: "Software Engineer",
-    period: "2021 – 2022",
-    location: "Bengaluru",
-    highlights: [
-      "Shipped the e-property listing marketplace with a responsive, accessible UI and unit and integration test coverage.",
     ],
   },
 ];

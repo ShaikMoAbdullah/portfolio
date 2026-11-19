@@ -1,0 +1,132 @@
+%==============================================================================
+%  Shaik Mohammad Abdullah — Product resume, Scale AI
+%  Product Manager of AI Applications, Global Public Sector
+%  Tailored from resume-product.tex. Single-column, ATS-friendly (pdfLaTeX).
+%==============================================================================
+\documentclass[letterpaper,10.5pt]{article}
+
+%------------------------------- PACKAGES -------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=0.45in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\usepackage{fontawesome5}
+
+%------------------------------- COLORS ---------------------------------------
+\definecolor{primary}{HTML}{1A1A1A}
+\definecolor{accent}{HTML}{2B4C7E}
+\definecolor{rule}{HTML}{B0B0B0}
+
+%------------------------------- GLOBAL STYLE ---------------------------------
+\color{primary}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+\urlstyle{same}
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+\linespread{1.0}
+
+%------------------------------- SECTION TITLES -------------------------------
+\titleformat{\section}
+  {\large\bfseries\scshape\color{accent}}
+  {}{0pt}{}[\color{rule}\titlerule]
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+
+%------------------------------- LIST STYLE -----------------------------------
+\setlist[itemize]{
+  leftmargin=1.3em,
+  topsep=0pt,
+  itemsep=0pt,
+  parsep=0pt,
+  label=\textcolor{accent}{\small$\bullet$}
+}
+
+%==============================================================================
+%  REUSABLE MACROS / COMPONENTS
+%==============================================================================
+
+\newcommand{\entry}[4]{%
+  \begin{tabularx}{\linewidth}{@{}X@{}r@{}}
+    \textbf{#1} & \textbf{#4} \\
+    \textit{#2} & \textit{#3} \\
+  \end{tabularx}%
+  \vspace{1pt}
+}
+
+\newcommand{\skill}[2]{\textbf{#1} & #2 \\}
+
+%==============================================================================
+%  DOCUMENT
+%==============================================================================
+\begin{document}
+
+%------------------------------- HEADER ---------------------------------------
+\begin{center}
+  {\Huge\bfseries Shaik Mohammad Abdullah}\\[4pt]
+  {\footnotesize
+    \href{mailto:shaikmoabdullah@gmail.com}{\faEnvelope\ shaikmoabdullah@gmail.com} \ \textbar\ %
+    \href{https://wa.me/918748057505}{\faWhatsapp\ +91-8748057505} \ \textbar\ %
+    \href{https://shaikmoabdullah.com}{\faGlobe\ shaikmoabdullah.com} \ \textbar\ %
+    \href{https://linkedin.com/in/shaikmoabdullah}{\faLinkedin\ linkedin.com/in/shaikmoabdullah} \ \textbar\ %
+    \href{https://github.com/shaikmoabdullah}{\faGithub\ github.com/shaikmoabdullah}
+  }\\[3pt]
+  {\small Product owner for AI applications in the public sector. 5+ years taking products from client scoping through delivery, the last two on LLM evaluation, training data, and AI tools with governments and frontier labs. Basic Arabic. Open to Doha or Dubai.}
+\end{center}
+
+%------------------------------- SKILLS + EDUCATION ---------------------------
+\noindent
+\begin{minipage}[t]{0.66\textwidth}
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l >{\raggedright\arraybackslash}X@{}}
+  \skill{Product}{Problem framing, roadmapping, PRDs, user stories, acceptance criteria, partner scoping}
+  \skill{AI}{LLM evaluation, evaluation rubrics, human feedback data, training-data pipelines, LLM text-to-SQL}
+  \skill{Technical}{SQL, PostgreSQL, JavaScript, TypeScript, React, Node.js, Figma, Cursor, Python}
+  \skill{Languages}{English, Arabic (basic)}
+\end{tabularx}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.31\textwidth}
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l >{\raggedright\arraybackslash}X@{}}
+  \skill{Degree}{B.Tech, Computer Science}
+  \skill{University}{REVA University}
+  \skill{Location}{Bengaluru, India}
+  \skill{Dates}{2017 -- 2021}
+\end{tabularx}
+\end{minipage}
+
+%------------------------------- EXPERIENCE -----------------------------------
+\section{Professional Experience}
+
+\entry{\href{https://karya.in}{Karya}}{Senior Product Engineer (Product Owner)}{Bengaluru, India}{2024 -- Present}
+{\small\textit{Product owner for Platform by Karya, an AI data and evaluation platform. Led client discovery, scoping, and delivery with AI engineers, software engineers, and operations coordinators, from the partner problem through deployment.}}
+\begin{itemize}
+  \item \textbf{Platform:} Owned \textbf{Platform by Karya} end to end: audio, NLP, egocentric data, and LLM-evaluation tasks. \textbf{65M+ tasks}, \textbf{70+ languages}, \textbf{6 countries}. \textbf{30+ components} so operations assemble a new program, including for low-bandwidth and low-literacy users, without a new build.
+  \item \textbf{Partners:} Co-designed data pipelines with \textbf{Google}, \textbf{IISc}, \textbf{Microsoft}, and \textbf{Anthropic} and deployed them on the platform. \textbf{Project Apollo:} \textbf{100,000 hours} across 22 languages, 60,000 workers, \textbf{\$2M} in wages paid out. \textbf{Project Vaani} with Google and IISc: \textbf{6,000 hours}, 24K+ speakers, 30 districts. Gave \textbf{bi-weekly} progress updates to partner leads and Karya leadership, including client talks in \textbf{Maharashtra}, \textbf{Africa}, and \textbf{Indonesia}.
+  \item \textbf{Public sector:} For \textbf{MahaVISTAAR} (Maharashtra), ran scoping with ministers, officers, and local coordinators on collecting agriculture data and adding \textbf{Marathi}, \textbf{Dehwali Bhili}, \textbf{Mavachi}, and \textbf{Pawari} to government apps, so farmers who speak the low-resource languages could use them. Also shipped language datasets for the \textbf{Government of India} and adolescent-health data with the \textbf{Karnataka Health Promotion Trust}.
+  \item \textbf{Evaluation:} Designed the evaluation rubric in collaboration with the AI teams and ran human evaluation of model output on the platform. \textbf{Samiksha} with Microsoft: \textbf{23,000+} real-world queries and \textbf{150,000+} human evaluations across public-service domains. An \textbf{Anthropic} evaluation: \textbf{10,000} community queries, \textbf{30,000+} tasks, 7 languages. Scoped the tasks and reviewed results with the partner so the set could be iterated.
+  \item \textbf{Operations:} Owned \textbf{Task Preview} from the problem through launch. Wrote the PRD with user stories, acceptance criteria, and non-goals. Every task stays in Preview, payouts off, until operations approves it. Task issues fell by \textbf{close to 90\%}, and a data operation takes \textbf{more than 50\% less time}. \textbf{Task Health} adds \textbf{7 automated checks}, each opening the screen that fixes the blocker.
+  \item \textbf{Access:} Data privacy comes first for internal PMs and operations and for external data workers and clients. Added an authorization layer that admits only authorized users, and a user screen so teams manage access on the platform. \textbf{4 global and 5 project roles} across \textbf{100+ API routes}; provisioning went \textbf{from hours to seconds}.
+  \item \textbf{AI application:} Enabled operations teams to pull live data without waiting on engineering, through an \textbf{LLM-backed} plain-English query tool over live PostgreSQL. Guardrail tests limit every generated query to allowed tables. Worked with PMs, ops, and delivery managers on requirements and rollout.
+\end{itemize}
+
+\entry{\href{https://umrain.in}{Umrain}}{Founder}{Bengaluru, India}{2023 -- 2025}
+\begin{itemize}
+  \item \textbf{Outcome:} Solo-founded a bootstrapped product for planning and booking Umrah without agents. Drove \textbf{\$43K revenue} over the period. Stopped in 2025: operations could not scale past \textbf{IATA} certification and Saudi Arabia travel regulations.
+  \item \textbf{Product:} Self-serve flow from preferences, budget, and schedule to a home-to-home itinerary, with a written, itemised quote before booking.
+\end{itemize}
+
+\entry{\href{https://zopsmart.com}{ZopSmart}}{Product Engineer}{Bengaluru, India}{2021 -- 2024}
+{\small\textit{Product scope on grocery and HR SaaS. Worked closely with the CTO, prioritized with stakeholders, and shipped from the backlog through launch.}}
+\begin{itemize}
+  \item \textbf{Data-driven:} \textbf{\href{https://www.kroger.com}{Kroger} (US Grocery e-Commerce):} Shipped the homepage and category-discovery redesign on the \textbf{2nd-largest US grocery e-commerce SaaS}. Click-through rose \textbf{3$\times$} and product sales rose \textbf{12\%}.
+  \item \textbf{Roadmap:} \textbf{\href{https://eazyupdates.com}{EazyUpdates} (Task-Management SaaS):} Owned \textbf{50\% of the product}, including leave and payroll tracking for HR stakeholders.
+\end{itemize}
+
+\end{document}

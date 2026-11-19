@@ -1,0 +1,146 @@
+%==============================================================================
+%  Shaik Mohammad Abdullah — Product Owner Resume (Razorpay, Senior PM Onboarding Infra)
+%  Single-column, ATS-friendly, Overleaf-compatible (pdfLaTeX)
+%  Standard packages only. Compile with: pdfLaTeX
+%==============================================================================
+\documentclass[letterpaper,10.5pt]{article}
+
+%------------------------------- PACKAGES -------------------------------------
+\usepackage[T1]{fontenc}            % proper font encoding (selectable text -> ATS safe)
+\usepackage[utf8]{inputenc}         % utf-8 input
+\usepackage{lmodern}                % clean, professional Latin Modern font
+\usepackage[margin=0.45in]{geometry} % tight, recruiter-friendly margins
+\usepackage{titlesec}               % section title formatting
+\usepackage{enumitem}               % compact, controllable lists
+\usepackage{tabularx}               % flexible tables for skills + headings
+\usepackage{xcolor}                 % subtle accent color
+\usepackage[hidelinks]{hyperref}    % clickable links, no ugly boxes
+\usepackage{microtype}              % superior typography / spacing
+\usepackage{fontawesome5}           % light icons (header only); remove if unwanted
+
+%------------------------------- COLORS ---------------------------------------
+\definecolor{primary}{HTML}{1A1A1A}     % near-black body text
+\definecolor{accent}{HTML}{2B4C7E}      % subtle professional blue
+\definecolor{rule}{HTML}{B0B0B0}        % light divider rule
+
+%------------------------------- GLOBAL STYLE ---------------------------------
+\color{primary}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{empty}
+\urlstyle{same}
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+\linespread{1.0}
+
+%------------------------------- SECTION TITLES -------------------------------
+\titleformat{\section}
+  {\large\bfseries\scshape\color{accent}}   % small-caps, bold, accent color
+  {}{0pt}{}[\color{rule}\titlerule]
+\titlespacing*{\section}{0pt}{4pt}{2pt}
+
+%------------------------------- LIST STYLE -----------------------------------
+\setlist[itemize]{
+  leftmargin=1.3em,
+  topsep=0pt,
+  itemsep=0pt,
+  parsep=0pt,
+  label=\textcolor{accent}{\small$\bullet$}
+}
+
+%==============================================================================
+%  REUSABLE MACROS / COMPONENTS
+%==============================================================================
+
+% Experience / education heading: org (bold, left) + dates (right)
+%                                 role (italic, left) + location (right)
+\newcommand{\entry}[4]{%
+  \begin{tabularx}{\linewidth}{@{}X@{}r@{}}
+    \textbf{#1} & \textbf{#4} \\
+    \textit{#2} & \textit{#3} \\
+  \end{tabularx}%
+  \vspace{1pt}
+}
+
+% Simple two-column heading (no role line): title (left) + meta (right)
+\newcommand{\entrylite}[4]{%
+  \begin{tabularx}{\linewidth}{@{}X@{}r@{}}
+    \textbf{#1} & \textbf{#3} \\
+    \textit{#2} & \textit{#4} \\
+  \end{tabularx}%
+  \vspace{1pt}
+}
+
+% Skill row: category (bold) : items
+\newcommand{\skill}[2]{\textbf{#1} & #2 \\}
+
+%==============================================================================
+%  DOCUMENT
+%==============================================================================
+\begin{document}
+
+%------------------------------- HEADER ---------------------------------------
+\begin{center}
+  {\Huge\bfseries Shaik Mohammad Abdullah}\\[4pt]
+  {\footnotesize
+    \href{mailto:shaikmoabdullah@gmail.com}{\faEnvelope\ shaikmoabdullah@gmail.com} \ \textbar\ %
+    \href{https://wa.me/918748057505}{\faWhatsapp\ +91-8748057505} \ \textbar\ %
+    \href{https://shaikmoabdullah.com}{\faGlobe\ shaikmoabdullah.com} \ \textbar\ %
+    \mbox{\href{https://linkedin.com/in/shaikmoabdullah}{\faLinkedin\ linkedin.com/in/shaikmoabdullah}}\\
+    \mbox{\href{https://github.com/shaikmoabdullah}{\faGithub\ github.com/shaikmoabdullah}} \ \textbar\ %
+    \mbox{\href{https://x.com/shaikmoabdullah}{\faTwitter\ x.com/shaikmoabdullah}}
+  }\\[3pt]
+  {\small Platform product owner with an engineering foundation. 5+ years shipping as an engineer and product owner; last 2 owning a platform with 100+ API routes, approval-gated workflow states, role-based access, and worker payouts (\$2M), plus LLM tools with guardrails and evals. Founder of Umrain.}
+\end{center}
+
+%------------------------------- SKILLS + EDUCATION ---------------------------
+\noindent
+\begin{minipage}[t]{0.66\textwidth}
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l >{\raggedright\arraybackslash}X@{}}
+  \skill{Product}{Platform roadmaps, PRDs, user stories, acceptance criteria, KPI definition, prioritization (RICE), UAT}
+  \skill{Platform}{REST APIs, workflow states and approval gates, role-based access control, data privacy, payouts}
+  \skill{AI}{LLM tools, guardrails, evaluation rubrics, human review, text-to-SQL; Cursor daily}
+  \skill{Technical}{SQL, PostgreSQL, TypeScript, Node.js, React, Jira, Figma}
+\end{tabularx}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.31\textwidth}
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l >{\raggedright\arraybackslash}X@{}}
+  \skill{Degree}{B.Tech, Computer Science}
+  \skill{University}{REVA University}
+  \skill{Location}{Bengaluru, India}
+  \skill{Dates}{2017 -- 2021}
+\end{tabularx}
+\end{minipage}
+
+%------------------------------- EXPERIENCE -----------------------------------
+\section{Professional Experience}
+
+\entry{\href{https://karya.in}{Karya}}{Senior Product Engineer (Platform Product Owner)}{Bengaluru, India}{2024 -- Present}
+{\small\textit{Product owner for the data-collection and worker-payments platform whose consumers are internal operations, finance, and product teams, external workers, and partners. Worked directly with the CTO and engineering on specs and design calls.}}
+\begin{itemize}
+  \item \textbf{Platform:} Owned \textbf{Platform by Karya} end to end: \textbf{65M+ tasks}, \textbf{70+ languages}, \textbf{6 countries}. \textbf{Project Apollo} ran \textbf{60,000 workers} through the platform, with \textbf{\$2M} disbursed in worker payouts.
+  \item \textbf{Workflow state:} Owned \textbf{Task Preview} from the problem through launch. Wrote the PRD with user stories, state transitions, acceptance criteria, and non-goals. Every new task starts in \textbf{Preview} and moves to \textbf{Live} only after an internal check and operations approval, with \textbf{payouts off} until then. Task issues fell by \textbf{close to 90\%}, and a data operation takes \textbf{more than 50\% less time}.
+  \item \textbf{Automated checks:} Defined \textbf{Task Health}: \textbf{7 automated checks} (assignments, microtasks, completion policy, upstream tasks, linking, rejected work) gate a task before it goes live. Each failed check opens the screen that fixes it, so coordinators clear blockers without an engineer.
+  \item \textbf{Access control:} Replaced hand-edited database access with self-serve role-based access. \textbf{4 global and 5 project roles}, permissions in code, enforced across \textbf{100+ API routes}; inactive users are denied. Provisioning went \textbf{from hours to seconds}, protecting worker and partner data.
+  \item \textbf{AI with guardrails:} Shipped an \textbf{LLM-backed plain-English query tool} over live PostgreSQL, with history and templates. Guardrail tests limit every generated query to allowed tables, so non-technical teams pull data safely without engineering.
+  \item \textbf{Evals:} Designed evaluation rubrics with AI teams and ran human review of model output: \textbf{Samiksha} with Microsoft (\textbf{23,000+} queries, \textbf{150,000+} human evaluations) and an \textbf{Anthropic} evaluation (\textbf{10,000} queries, \textbf{30,000+} tasks, 7 languages).
+  \item \textbf{Configuration:} Turned task creation into \textbf{30+ reusable components}, so operations assemble a new flow, including for low-bandwidth and low-literacy users, without a new build. Partners include \textbf{Google} and \textbf{IISc} (\textbf{Project Vaani}: 6,000 hours, 24K+ speakers).
+\end{itemize}
+
+\entry{\href{https://umrain.in}{Umrain}}{Founder}{Bengaluru, India}{2023 -- 2025}
+\begin{itemize}
+  \item \textbf{Outcome:} Solo-founded a bootstrapped product for planning and booking Umrah without agents. Drove \textbf{\$43K revenue} over the period, owning product, pricing, vendors, operations, and support. Stopped in 2025: operations could not scale past \textbf{IATA} certification and Saudi Arabia travel regulations.
+  \item \textbf{Product:} Self-serve flow from preferences, budget, and schedule to a home-to-home itinerary, with a written, itemised quote before booking. Managed external vendors; roadmap covered payments, logistics, pricing, and travel compliance.
+\end{itemize}
+
+\entry{\href{https://zopsmart.com}{ZopSmart}}{Product Engineer}{Bengaluru, India}{2021 -- 2024}
+{\small\textit{Product scope on grocery, HR, and consumer SaaS. Worked closely with the CTO, prioritized with stakeholders, and shipped from the backlog through launch.}}
+\begin{itemize}
+  \item \textbf{Data-driven:} \textbf{\href{https://www.kroger.com}{Kroger} (US Grocery e-Commerce):} Shipped the homepage and category-discovery redesign on the \textbf{2nd-largest US grocery e-commerce SaaS}. Click-through rose \textbf{3$\times$} and product sales rose \textbf{12\%}.
+  \item \textbf{Roadmap:} \textbf{\href{https://eazyupdates.com}{EazyUpdates} (Task-Management SaaS):} Owned \textbf{50\% of the product}, including leave and payroll tracking for HR stakeholders and \textbf{GitHub and Google Calendar} integrations for live progress visibility.
+  \item \textbf{Smrize (Productivity SaaS):} Shipped a mobile-first book-summary app with audio. Traffic rose \textbf{20\%}, with \textbf{24-minute average daily sessions}.
+\end{itemize}
+
+\end{document}
