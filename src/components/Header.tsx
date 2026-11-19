@@ -1,135 +1,101 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ThemeToggle } from "./ThemeToggle";
+import { Menu, Search, X } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { navLinks, profile } from "@/data/site";
 import { useActiveSection } from "@/hooks/useActiveSection";
-
-const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Work" },
-  { href: "#contact", label: "Contact" },
-];
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const activeId = useActiveSection();
+  const pathname = usePathname();
+  const current = pathname.startsWith("/work") ? "work" : activeId;
 
   return (
-    <motion.header
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
-      className="sticky top-0 z-50 w-full border-b border-edge/60 bg-page/80 backdrop-blur-md print:hidden"
-    >
+    <header className="sticky top-0 z-50 border-b border-edge/80 bg-page/80 backdrop-blur-md print:hidden">
       <nav
-        className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4"
+        className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3.5"
         aria-label="Main navigation"
       >
-        <a
-          href="#about"
-          className="text-lg font-semibold text-stone-800 dark:text-stone-100 transition-colors hover:text-accent"
-        >
-          SMA
-        </a>
-        <div className="flex items-center gap-3 md:gap-6">
-          <ul className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => {
-              const sectionId = link.href.slice(1);
-              const isActive = activeId === sectionId;
-              return (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className={`text-sm font-medium transition-colors ${
-                      isActive
-                        ? "text-accent"
-                        : "text-stone-600 dark:text-stone-400 hover:text-accent"
-                    }`}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
+        <Link href="/#about" className="font-serif text-2xl tracking-tight text-foreground">
+          Abdullah
+        </Link>
+        <ul className="hidden items-center gap-7 lg:flex">
+          {navLinks.map((link) => {
+            const isActive = current === link.id;
+            return (
+              <li key={link.id}>
+                <Link
+                  href={link.href}
+                  aria-current={isActive ? "true" : undefined}
+                  className={`text-sm transition-colors ${
+                    isActive ? "text-foreground" : "text-muted hover:text-foreground"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+        <div className="flex items-center gap-1 sm:gap-2">
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new Event("open-palette"))}
+            className="flex items-center gap-2 rounded-full px-3 py-2 text-sm text-muted transition-colors hover:bg-surface-2 hover:text-foreground"
+            aria-label="Open search. Command K or Control K."
+          >
+            <Search className="h-4 w-4" />
+            <kbd className="hidden font-sans text-xs text-faint sm:inline">⌘K</kbd>
+          </button>
           <a
-            href="/Shaik_Mohammad_Abdullah_Product_Resume_ScaleAI.pdf"
+            href={profile.resume}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-accent-strong px-3.5 py-1.5 text-sm font-semibold text-accent-contrast transition-colors hover:bg-accent-strong-hover focus:outline-none focus:ring-2 focus:ring-accent-strong focus:ring-offset-2 dark:focus:ring-offset-stone-950"
+            className="hidden rounded-full px-3 py-2 text-sm text-foreground transition-colors hover:bg-surface-2 sm:inline"
           >
             Resume
           </a>
           <ThemeToggle />
           <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden flex h-10 w-10 items-center justify-center rounded-full bg-stone-200/80 dark:bg-stone-800/80"
+            type="button"
+            onClick={() => setMobileOpen((open) => !open)}
+            className="flex h-10 w-10 items-center justify-center rounded-full text-foreground lg:hidden"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
           >
-            {mobileOpen ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                className="h-5 w-5"
-              >
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                className="h-5 w-5"
-              >
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
-              </svg>
-            )}
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </nav>
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden overflow-hidden border-t border-edge"
-          >
-            <ul className="flex flex-col gap-1 px-6 py-4">
-              {navLinks.map((link) => {
-                const sectionId = link.href.slice(1);
-                const isActive = activeId === sectionId;
-                return (
-                  <li key={link.href}>
-                    <a
-                      href={link.href}
-                      onClick={() => setMobileOpen(false)}
-                      className={`block py-2 text-sm font-medium transition-colors ${
-                        isActive
-                          ? "text-accent"
-                          : "text-stone-600 dark:text-stone-400 hover:text-accent"
-                      }`}
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                );
-              })}
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.header>
+      {mobileOpen && (
+        <ul className="border-t border-edge px-6 py-3 lg:hidden">
+          {navLinks.map((link) => (
+            <li key={link.id}>
+              <Link
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="block py-2.5 text-sm text-foreground"
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+          <li>
+            <a
+              href={profile.resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block py-2.5 text-sm text-foreground"
+            >
+              Resume
+            </a>
+          </li>
+        </ul>
+      )}
+    </header>
   );
 }

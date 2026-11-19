@@ -4,46 +4,39 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /*
- * THEME TOKENS — single source of truth.
- *   Accent: amber          Surface: zinc          Dark mode: `.dark` class
- *
- * Accent tokens:
- *   --accent          text/icon on neutral surfaces (AA contrast)
- *   --accent-strong   solid fill (buttons, dots)
- *   --accent-strong-hover
- *   --accent-contrast text/icon on top of --accent-strong
- *   --metric          numeric/stat highlight
- * Surface tokens:
- *   --background      page background        --foreground card/page text
- *   --surface         elevated card surface  --surface-2  tinted section bg
- *   --edge            border / divider color
+ * Editorial theme.
+ *   Ink on warm paper. Amber is reserved for figures and the primary action.
  */
 :root {
-  --background: #fafafa;
-  --foreground: #18181b;
-  --surface: #ffffff;
-  --surface-2: #f4f4f5;
-  --edge: #e4e4e7;
+  --background: #f6f3ec;
+  --foreground: #1c1917;
+  --surface: #fcfbf8;
+  --surface-2: #efeae2;
+  --edge: #e3dcd0;
+  --muted: #57534e;
+  --faint: #a8a29e;
 
-  --accent: #b45309;
-  --accent-strong: #f59e0b;
-  --accent-strong-hover: #d97706;
-  --accent-contrast: #1c1917;
-  --metric: #b45309;
+  --accent: #9a3412;
+  --accent-strong: #c2410c;
+  --accent-strong-hover: #9a3412;
+  --accent-contrast: #fffaf5;
+  --metric: #9a3412;
 }
 
 :root.dark {
-  --background: #09090b;
-  --foreground: #fafafa;
-  --surface: #18181b;
-  --surface-2: #121214;
-  --edge: #27272a;
+  --background: #100e0c;
+  --foreground: #f5f0e8;
+  --surface: #1a1714;
+  --surface-2: #141210;
+  --edge: #2c2824;
+  --muted: #a8a29e;
+  --faint: #78716c;
 
-  --accent: #fbbf24;
+  --accent: #fdba74;
   --accent-strong: #f59e0b;
-  --accent-strong-hover: #fcd34d;
+  --accent-strong-hover: #fbbf24;
   --accent-contrast: #1c1917;
-  --metric: #fbbf24;
+  --metric: #fdba74;
 }
 
 @theme inline {
@@ -53,21 +46,23 @@
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
   --color-edge: var(--edge);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
   --color-accent: var(--accent);
   --color-accent-strong: var(--accent-strong);
   --color-accent-strong-hover: var(--accent-strong-hover);
   --color-accent-contrast: var(--accent-contrast);
   --color-metric: var(--metric);
-  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument), ui-serif, Georgia, "Times New Roman", serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
 }
 
-/* Smooth scroll for anchor links */
 html {
   scroll-behavior: smooth;
 }
@@ -78,19 +73,126 @@ html {
   }
 }
 
-/* Accent-tinted text selection */
 ::selection {
   background: color-mix(in oklab, var(--accent-strong) 28%, transparent);
   color: var(--foreground);
 }
 
-/* Focus visible for accessibility */
 :focus-visible {
   outline: 2px solid var(--accent-strong);
   outline-offset: 2px;
 }
 
-/* Print styles - print:hidden is a Tailwind utility, applied via className */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  overflow: hidden;
+}
+
+.marquee-track {
+  animation: marquee 48s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    overflow: visible;
+  }
+
+  .marquee-track,
+  .marquee-track ul {
+    animation: none;
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0.75rem;
+    padding-right: 0;
+  }
+
+  .marquee-duplicate {
+    display: none;
+  }
+}
+
+[cmdk-overlay] {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: color-mix(in oklab, var(--foreground) 35%, transparent);
+  backdrop-filter: blur(4px);
+}
+
+[cmdk-dialog] {
+  position: fixed;
+  z-index: 81;
+  top: 18vh;
+  left: 50%;
+  width: min(36rem, calc(100vw - 2rem));
+  transform: translateX(-50%);
+  overflow: hidden;
+  border: 1px solid var(--edge);
+  border-radius: 1rem;
+  background: var(--surface);
+  color: var(--foreground);
+  box-shadow: 0 24px 80px color-mix(in oklab, var(--foreground) 18%, transparent);
+}
+
+[cmdk-input] {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--edge);
+  background: transparent;
+  padding: 1rem 1.1rem;
+  font: inherit;
+  color: inherit;
+  outline: none;
+}
+
+[cmdk-list] {
+  max-height: min(24rem, 50vh);
+  overflow: auto;
+  padding: 0.4rem;
+}
+
+[cmdk-group-heading] {
+  padding: 0.6rem 0.7rem 0.25rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+[cmdk-item] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 0.6rem;
+  padding: 0.65rem 0.7rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+[cmdk-item][data-selected="true"] {
+  background: var(--surface-2);
+}
+
+[cmdk-empty] {
+  padding: 1.5rem 0.8rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 @media print {
   body {
     background: white;

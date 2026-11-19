@@ -1,13 +1,23 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { DM_Sans } from "next/font/google";
+import { Geist, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { SkipToContent } from "@/components/SkipToContent";
+import { Header } from "@/components/Header";
+import { CommandPalette } from "@/components/CommandPalette";
+import { BackToTop } from "@/components/BackToTop";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const geist = Geist({
+  variable: "--font-geist",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+});
+
+const instrument = Instrument_Serif({
+  variable: "--font-instrument",
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
 });
 
 const baseUrl = "https://shaikmoabdullah.com";
@@ -16,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: "Shaik Mohammad Abdullah | Product Owner | shaikmoabdullah.com",
   description:
-    "Shaik Mohammad Abdullah (shaikmoabdullah) — product owner for AI applications in the public sector. 5+ years taking products from client scoping through delivery, the last two on LLM evaluation, training data, and AI tools with governments and frontier labs. Basic Arabic. Open to Doha or Dubai.",
+    "Shaik Mohammad Abdullah (shaikmoabdullah) — product owner for AI applications in the public sector. 5+ years taking products from client scoping through delivery, the last two on LLM evaluation, training data, and AI tools with governments and frontier labs.",
   applicationName: "Shaik Mohammad Abdullah",
   authors: [{ name: "Shaik Mohammad Abdullah", url: baseUrl }],
   creator: "Shaik Mohammad Abdullah",
@@ -38,8 +48,6 @@ export const metadata: Metadata = {
     "Arabic",
     "Bangalore",
     "Bengaluru",
-    "Doha",
-    "Dubai",
   ],
   openGraph: {
     title: "Shaik Mohammad Abdullah | Product Owner | shaikmoabdullah.com",
@@ -87,7 +95,7 @@ export default function RootLayout({
     url: baseUrl,
     jobTitle: "Product Owner",
     description:
-      "Product owner for AI applications in the public sector. 5+ years taking products from client scoping through delivery, the last two on LLM evaluation, training data, and AI tools with governments and frontier labs. Based in Bangalore, India. Basic Arabic. Open to Doha or Dubai.",
+      "Product owner for AI applications in the public sector. 5+ years taking products from client scoping through delivery, the last two on LLM evaluation, training data, and AI tools with governments and frontier labs. Based in Bangalore, India.",
     knowsAbout: [
       "Product ownership",
       "AI applications",
@@ -131,7 +139,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${dmSans.variable} font-sans antialiased`}>
+      <body className={`${geist.variable} ${instrument.variable} font-sans antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
@@ -155,7 +163,11 @@ export default function RootLayout({
           }}
         />
         <ThemeProvider>
+          <SkipToContent />
+          <Header />
+          <CommandPalette />
           {children}
+          <BackToTop />
         </ThemeProvider>
       </body>
     </html>

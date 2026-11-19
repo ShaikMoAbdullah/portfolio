@@ -1,38 +1,30 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 export function SectionHeading({
   index,
   title,
   id,
-  align = "left",
+  lede,
   className = "",
 }: {
-  index?: string;
+  index: string;
   title: string;
   id: string;
-  align?: "left" | "center";
+  lede?: string;
   className?: string;
 }) {
   return (
-    <motion.div
-      initial={{ y: 20, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      viewport={{ once: true, margin: "-50px" }}
-      className={`${align === "center" ? "text-center" : ""} ${className}`}
-    >
-      {index && (
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-500 dark:text-stone-400">
-          {index}
-        </p>
-      )}
+    <div className={className}>
+      <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-muted">
+        {index}
+      </p>
       <h2
         id={id}
-        className={`${index ? "mt-2" : ""} text-3xl font-bold tracking-tight text-stone-900 dark:text-stone-50`}
+        className="mt-3 max-w-3xl font-serif text-4xl leading-[1.08] tracking-tight text-foreground md:text-5xl"
       >
         {title}
       </h2>
-    </motion.div>
+      {lede && (
+        <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">{lede}</p>
+      )}
+    </div>
   );
 }

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const sectionIds = ["about", "experience", "projects", "contact"];
+const sectionIds = ["about", "work", "approach", "experience", "contact"];
 
 export function useActiveSection() {
   const [activeId, setActiveId] = useState<string>("about");
@@ -10,14 +10,12 @@ export function useActiveSection() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
-            break;
-          }
-        }
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActiveId(visible.target.id);
       },
-      { rootMargin: "-40% 0px -40% 0px", threshold: 0 }
+      { rootMargin: "-20% 0px -55% 0px", threshold: [0.1, 0.25, 0.5] },
     );
 
     sectionIds.forEach((id) => {
