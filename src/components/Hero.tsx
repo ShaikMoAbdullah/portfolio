@@ -61,7 +61,7 @@ export function Hero() {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="mt-2 text-lg font-medium text-stone-700 dark:text-stone-300"
             >
-              Product Owner
+              Product owner for AI applications
             </motion.p>
             <motion.p
               initial={{ y: 20, opacity: 0 }}
@@ -69,10 +69,10 @@ export function Hero() {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="mt-4 max-w-xl text-stone-600 dark:text-stone-400 leading-relaxed"
             >
-              Owns the roadmap, backlog, and prioritization. 5+ years taking
-              SaaS and task platforms from the PRD and user stories through
-              launch, with operations, finance, support, and product in the
-              room.
+              5+ years taking products from client scoping through delivery, the
+              last two on LLM evaluation, training data, and AI tools with
+              governments and frontier labs. Basic Arabic. Open to Doha or
+              Dubai.
             </motion.p>
             <motion.div
               initial={{ y: 20, opacity: 0 }}

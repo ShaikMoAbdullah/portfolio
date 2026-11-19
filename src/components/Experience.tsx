@@ -9,6 +9,7 @@ type Role = {
   period: string;
   location: string;
   highlights: string[];
+  summary?: string;
   url?: string;
 };
 
@@ -16,19 +17,19 @@ const experiences: Role[] = [
   {
     company: "Karya",
     url: "https://karya.in",
-    role: "Senior Product Engineer",
+    role: "Senior Product Engineer (Product Owner)",
     period: "2024 – Present",
     location: "Bengaluru",
+    summary:
+      "Product owner for Platform by Karya, an AI data and evaluation platform. Led client discovery, scoping, and delivery with AI engineers, software engineers, and operations coordinators, from the partner problem through deployment.",
     highlights: [
-      "Owned the roadmap and backlog for Platform by Karya: 65M+ tasks deployed, 70+ languages, and 6 countries across the Global South.",
-      "Worked with Google, IISc, Microsoft, and Anthropic on programs including Project Vaani (6,000 hours, 24K+ speakers), Project Apollo (100,000 hours, 60,000 workers, $2M disbursed), Samiksha (23,000+ queries, 150,000+ human evaluations), and an Anthropic evaluation (10,000 queries, 30,000+ tasks).",
-      "Turned task creation into configuration with 30+ components, so operations can assemble a new data-collection task without a new build.",
-      "Wrote the Task Preview PRD with user stories, acceptance criteria, and non-goals, then aligned operations, finance, support, and product. Every new task starts in Preview, payouts stay off during testing, and promotion to Live runs in one transaction.",
-      "Defined Task Health as 7 automated checks, each linking to the screen that fixes the issue, so coordinators clear blockers without an engineer.",
-      "Replaced hand-edited database access with a self-serve roles UI: 4 global and 5 project roles across 100+ API routes. Provisioning went from hours to seconds.",
-      "Shipped plain-English queries over live PostgreSQL, so internal non-technical teams can look up operational data without asking the tech team.",
-      "Worked directly with the CTO on the roadmap, backlog, and prioritization.",
-      "Mentored junior engineers on backlog prioritization and product thinking.",
+      "Platform: Owned Platform by Karya end to end: audio, NLP, egocentric data, and LLM-evaluation tasks. 65M+ tasks, 70+ languages, 6 countries. 30+ components so operations assemble a new program, including for low-bandwidth and low-literacy users, without a new build.",
+      "Partners: Co-designed data pipelines with Google, IISc, Microsoft, and Anthropic and deployed them on the platform. Project Apollo: 100,000 hours across 22 languages, 60,000 workers, $2M in wages paid out. Project Vaani with Google and IISc: 6,000 hours, 24K+ speakers, 30 districts. Gave bi-weekly progress updates to partner leads and Karya leadership, including client talks in Maharashtra, Africa, and Indonesia.",
+      "Public sector: For MahaVISTAAR (Maharashtra), ran scoping with ministers, officers, and local coordinators on collecting agriculture data and adding Marathi, Dehwali Bhili, Mavachi, and Pawari to government apps, so farmers who speak the low-resource languages could use them. Also shipped language datasets for the Government of India and adolescent-health data with the Karnataka Health Promotion Trust.",
+      "Evaluation: Designed the evaluation rubric with the AI teams and ran human evaluation of model output on the platform. Samiksha with Microsoft: 23,000+ real-world queries and 150,000+ human evaluations across public-service domains. An Anthropic evaluation: 10,000 community queries, 30,000+ tasks, 7 languages. Scoped the tasks and reviewed results with the partner so the set could be iterated.",
+      "Operations: Owned Task Preview from the problem through launch. Wrote the PRD with user stories, acceptance criteria, and non-goals. Every task stays in Preview, payouts off, until operations approves it. Task issues fell by close to 90%, and a data operation takes more than 50% less time. Task Health adds 7 automated checks, each opening the screen that fixes the blocker.",
+      "Access: Data privacy comes first for internal PMs and operations and for external data workers and clients. Added an authorization layer that admits only authorized users, and a user screen so teams manage access on the platform. 4 global and 5 project roles across 100+ API routes; provisioning went from hours to seconds.",
+      "AI application: Enabled operations teams to pull live data without waiting on engineering, through an LLM-backed plain-English query tool over live PostgreSQL. Guardrail tests limit every generated query to allowed tables. Worked with PMs, ops, and delivery managers on requirements and rollout.",
     ],
   },
   {
@@ -38,9 +39,8 @@ const experiences: Role[] = [
     period: "2023 – 2025",
     location: "Bengaluru",
     highlights: [
-      "Solo-founded a bootstrapped product for planning and booking Umrah without agents. Drove $43K revenue over the period.",
-      "Stopped in 2025: operations could not scale past IATA certification and Saudi Arabia travel regulations.",
-      "Shipped a self-serve flow from preferences, budget, and schedule to a home-to-home itinerary, with a written, itemised quote before booking.",
+      "Solo-founded a bootstrapped product for planning and booking Umrah without agents. Drove $43K revenue over the period. Stopped in 2025: operations could not scale past IATA certification and Saudi Arabia travel regulations.",
+      "Self-serve flow from preferences, budget, and schedule to a home-to-home itinerary, with a written, itemised quote before booking.",
     ],
   },
   {
@@ -49,11 +49,11 @@ const experiences: Role[] = [
     role: "Product Engineer",
     period: "2021 – 2024",
     location: "Bengaluru",
+    summary:
+      "Product scope on grocery and HR SaaS. Worked closely with the CTO, prioritized with stakeholders, and shipped from the backlog through launch.",
     highlights: [
-      "Worked closely with the CTO on prioritization and what shipped.",
-      "Kroger: shipped the homepage and category-discovery redesign on the 2nd-largest US grocery e-commerce SaaS, lifting click-through 3× and product sales 12%.",
-      "EazyUpdates: owned 50% of the product roadmap, including leave and payroll tracking for HR teams and GitHub and Google Calendar integrations.",
-      "Smrize: shipped a mobile-first book-summary app with audio, growing traffic 20% with 24-minute average daily sessions.",
+      "Kroger (US grocery e-commerce): shipped the homepage and category-discovery redesign on the 2nd-largest US grocery e-commerce SaaS. Click-through rose 3× and product sales rose 12%.",
+      "EazyUpdates (task-management SaaS): owned 50% of the product, including leave and payroll tracking for HR stakeholders.",
     ],
   },
 ];
@@ -146,6 +146,11 @@ export function Experience() {
                   {exp.location}
                 </span>
               </p>
+              {exp.summary && (
+                <p className="mt-3 text-sm leading-relaxed text-stone-600 italic dark:text-stone-300">
+                  {exp.summary}
+                </p>
+              )}
               <ul className="mt-4 space-y-2">
                 {exp.highlights.map((highlight) => (
                   <li

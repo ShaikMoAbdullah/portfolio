@@ -23,59 +23,70 @@ const caseStudies: CaseStudy[] = [
     org: "Karya",
     featured: true,
     problem:
-      "Organisations needed one product to create, customise, and deploy data tasks across languages and countries.",
+      "Partners needed one product to run audio, NLP, egocentric, and LLM-evaluation programs across languages and countries.",
     did: [
-      "Owned the product end to end: audio, NLP, computer vision, RLHF, and LLM-evaluation tasks, with in-app preview and a human-and-AI validation loop.",
-      "Project Vaani, with Google and IISc: 6,000 hours of voice data, 24K+ speakers, 30 districts.",
-      "Project Apollo: 100,000 hours of conversational speech across 22 languages, 60,000 workers, $2M disbursed.",
-      "Samiksha, with Microsoft: 23,000+ real-world queries and 150,000+ human evaluations.",
-      "Anthropic evaluation: 10,000 community queries and 30,000+ tasks across 7 languages.",
+      "Owned the platform end to end. 30+ components so operations assemble a new program, including for low-bandwidth and low-literacy users, without a new build.",
+      "Co-designed data pipelines with Google, IISc, Microsoft, and Anthropic and deployed them on the platform.",
+      "Project Apollo: 100,000 hours across 22 languages, 60,000 workers, $2M in wages paid out.",
+      "Project Vaani with Google and IISc: 6,000 hours, 24K+ speakers, 30 districts.",
     ],
-    result:
-      "65M+ tasks deployed, 70+ languages, and 6 countries across the Global South.",
-    stack: ["Platform by Karya"],
+    result: "65M+ tasks, 70+ languages, and 6 countries.",
+    stack: ["Product", "AI data", "Partner scoping"],
     liveUrl: "https://platform.karya.in",
   },
   {
-    name: "Task Preview: nothing goes live untested",
-    org: "Karya",
+    name: "MahaVISTAAR",
+    org: "Karya · Public sector",
     problem:
-      "Data-collection tasks reached workers before anyone had checked them, and a test run could pay workers.",
+      "Farmers who speak low-resource languages could not use Maharashtra government apps, and agriculture data collection needed local scoping.",
     did: [
-      "Wrote the PRD: user stories, locked decisions, and non-goals. Every task is created in Preview. Promotion to Live is one database transaction. Payouts, ledger updates, and payments stay off until the task is Live.",
-      "Aligned operations, finance, support, and product on that rule, then ran it through sprint planning and grooming in Jira.",
-      "Shipped Task Health on the same page: 7 checks, each linking to the screen that fixes the issue, so a coordinator can see why a task is blocked.",
+      "Ran scoping with ministers, officers, and local coordinators on collecting agriculture data.",
+      "Scoped adding Marathi, Dehwali Bhili, Mavachi, and Pawari so those farmers could use the apps.",
+      "Shipped language datasets for the Government of India and adolescent-health data with the Karnataka Health Promotion Trust.",
     ],
     result:
-      "Every new task is validated before workers see it, and test runs do not pay workers.",
-    stack: ["PRD", "Jira", "TypeScript", "React", "PostgreSQL"],
+      "Government apps could serve farmers who speak those low-resource languages.",
+    stack: ["Public sector", "Partner scoping", "Languages"],
   },
   {
-    name: "Payout ledger: pay only for work that qualifies",
+    name: "LLM evaluation",
     org: "Karya",
     problem:
-      "The worker ledger could update while a task was still a test, so trial work looked like earnings.",
+      "Public-service and frontier-lab models needed human evaluation of real queries, with a rubric the partner could iterate.",
     did: [
-      "Left payouts, ledger updates, and payments untouched until a task left Preview.",
-      "Posting happens in one transaction with the move to Live, so the task and the right to pay change together or not at all.",
-      "Operations approves that posting. Finance and support read the same state.",
+      "Designed the evaluation rubric with the AI teams and ran human evaluation of model output on the platform.",
+      "Samiksha with Microsoft: 23,000+ real-world queries and 150,000+ human evaluations across public-service domains.",
+      "Anthropic evaluation: 10,000 community queries, 30,000+ tasks, 7 languages. Scoped the tasks and reviewed results with the partner.",
     ],
-    result:
-      "Nothing posts to the ledger for a test. Pay is recorded only after the work is approved and live.",
-    stack: ["PRD", "PostgreSQL", "TypeScript"],
+    result: "Evaluation sets the partners could iterate.",
+    stack: ["LLM evaluation", "Rubrics", "Human feedback"],
   },
   {
-    name: "Access control & plain-English queries",
+    name: "Task Preview",
     org: "Karya",
     problem:
-      "Changing access meant editing the database by hand, and non-technical teams could not look at live data without SQL.",
+      "Tasks reached workers before operations had checked them, and a test run could pay workers.",
     did: [
-      "Designed project-scoped RBAC and ReBAC across 100+ API routes, with 4 global and 5 project roles, plus a self-serve UI to assign and revoke roles.",
-      "Shipped a conversational interface over live PostgreSQL, with chat history, reusable templates, and resizable tables.",
+      "Wrote the PRD with user stories, acceptance criteria, and non-goals.",
+      "Every task stays in Preview, payouts off, until operations approves it.",
+      "Task Health adds 7 automated checks, each opening the screen that fixes the blocker.",
     ],
     result:
-      "Provisioning dropped from hours to seconds. Stakeholders query data in plain English.",
-    stack: ["Node.js", "GraphQL", "PostgreSQL", "TypeScript", "LLM"],
+      "Task issues fell by close to 90%, and a data operation takes more than 50% less time.",
+    stack: ["PRD", "TypeScript", "React", "PostgreSQL"],
+  },
+  {
+    name: "Access and plain-English queries",
+    org: "Karya",
+    problem:
+      "Access was edited in the database by hand, and operations could not pull live data without engineering.",
+    did: [
+      "Added an authorization layer and a user screen so teams manage access. 4 global and 5 project roles across 100+ API routes.",
+      "Shipped an LLM-backed plain-English query tool over live PostgreSQL. Guardrail tests limit every generated query to allowed tables.",
+    ],
+    result:
+      "Provisioning went from hours to seconds. Operations pull live data without waiting on engineering.",
+    stack: ["PostgreSQL", "TypeScript", "LLM"],
     liveUrl: "https://karya.in",
   },
 ];

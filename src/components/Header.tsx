@@ -55,7 +55,7 @@ export function Header() {
             })}
           </ul>
           <a
-            href="/Shaik_Mohammad_Abdullah_Product_Resume.pdf"
+            href="/Shaik_Mohammad_Abdullah_Product_Resume_ScaleAI.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full bg-accent-strong px-3.5 py-1.5 text-sm font-semibold text-accent-contrast transition-colors hover:bg-accent-strong-hover focus:outline-none focus:ring-2 focus:ring-accent-strong focus:ring-offset-2 dark:focus:ring-offset-stone-950"
