@@ -20,7 +20,7 @@ export function Timeline() {
           {experiences.map((job) => {
             const expanded = open === job.company;
             return (
-              <div key={job.company} className={job.founder ? "bg-surface" : ""}>
+              <div key={job.company}>
                 <button
                   type="button"
                   aria-expanded={expanded}
